@@ -1,4 +1,7 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+
+import 'components/custom_list_tile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,106 +13,211 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return const MaterialApp(
+      home: MusicApp(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+class MusicApp extends StatefulWidget {
+  const MusicApp({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MusicAppState createState() => _MusicAppState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _MusicAppState extends State<MusicApp> {
+  //Music List
+  List musicList = [
+    {
+      'title': "Tech House Vibes",
+      'singer': "Alejandro Magaña",
+      'url':
+          "https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3",
+      'coverUrl':
+          "https://th.bing.com/th/id/OIP.QdvYPJETYNTY7LTPPmQiNwAAAA?pid=ImgDet&rs=1"
+    },
+    {
+      'title': "Sun and His Daughter",
+      'singer': "Eugenio Mininni",
+      'url':
+          "https://assets.mixkit.co/music/preview/mixkit-sun-and-his-daughter-580.mp3",
+      'coverUrl':
+          "https://i1.sndcdn.com/artworks-000076158811-zsifa4-t500x500.jpg"
+    },
+    {
+      'title': "Raising Me Higher",
+      'singer': "Ahjay Stelino",
+      'url':
+          "https://assets.mixkit.co/music/preview/mixkit-raising-me-higher-34.mp3",
+      'coverUrl': "https://m.media-amazon.com/images/I/51DGF7eXc6L.jpg"
+    },
+    {
+      'title': "Deep Urban",
+      'singer': "Eugenio Mininni",
+      'url': "https://assets.mixkit.co/music/preview/mixkit-deep-urban-623.mp3",
+      'coverUrl':
+          "https://img.discogs.com/4RboV8xZEeh5nkLH9SJ0GJP7IVI=/fit-in/600x598/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-545921-1320012464.jpeg.jpg"
+    }
+  ];
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+  String currentTitle = "";
+  String currentCover = "";
+  String currentSinger = "";
+  IconData btnIcon = Icons.play_arrow;
+
+  //creamos el player
+  AudioPlayer audioPlayer = AudioPlayer(mode: PlayerMode.MEDIA_PLAYER);
+  bool isPlaying = false;
+  String currentSong = "";
+
+  //creamos la barra de reproduccion
+  Duration duration = const Duration();
+  Duration position = const Duration();
+
+  void playMusic(String url) async {
+    if (isPlaying && currentSong != url) {
+      audioPlayer.pause();
+      int result = await audioPlayer.play(url);
+      if (result == 1) {
+        setState(() {
+          currentSong = url;
+        });
+      }
+    } else if (!isPlaying) {
+      int result = await audioPlayer.play(url);
+      if (result == 1) {
+        setState(() {
+          isPlaying = true;
+          btnIcon = Icons.play_arrow;
+        });
+      }
+    }
+    audioPlayer.onDurationChanged.listen((Duration p) {
+      setState(() {
+        duration = p;
+        print('duration:$duration');
+      });
+    });
+    audioPlayer.onAudioPositionChanged.listen((Duration p) {
+      setState(() {
+        position = p;
+        print('position:$position');
+      });
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        backgroundColor: Colors.white,
+        title: const Text(
+          "My Playlist",
+          style: TextStyle(color: Colors.black),
         ),
+        elevation: 0,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+                itemCount: musicList.length,
+                itemBuilder: (context, index) => customListTile(
+                      onTap: () {
+                        playMusic(musicList[index]['url']);
+                        setState(() {
+                          currentTitle = musicList[index]["title"];
+                          currentCover = musicList[index]["coverUrl"];
+                          currentSinger = musicList[index]["singer"];
+                        });
+                      },
+                      title: musicList[index]['title'],
+                      singer: musicList[index]['singer'],
+                      cover: musicList[index]['coverUrl'],
+                    )),
+          ),
+          //la segunda parte es del player
+          Container(
+            decoration: const BoxDecoration(color: Colors.white, boxShadow: [
+              BoxShadow(
+                color: Color(0x55212121),
+                blurRadius: 8.0,
+              ),
+            ]),
+            child: Column(
+              children: [
+                Slider.adaptive(
+                  value: position.inSeconds.toDouble(),
+                  min: 0.0,
+                  max: duration.inSeconds.toDouble(),
+                  onChanged: (value) {},
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      bottom: 8.0, left: 12.0, right: 12.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        height: 60.0,
+                        width: 60.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(6.0),
+                            image: DecorationImage(
+                                image: NetworkImage(currentCover))),
+                      ),
+                      const SizedBox(width: 10.0),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              currentTitle,
+                              style: const TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 5.0,
+                            ),
+                            Text(
+                              currentSinger,
+                              style: const TextStyle(
+                                  color: Colors.grey, fontSize: 14.0),
+                            ),
+                          ],
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          if (isPlaying) {
+                            audioPlayer.pause();
+                            setState(() {
+                              btnIcon = Icons.pause;
+                              isPlaying = false;
+                            });
+                          } else {
+                            audioPlayer.resume();
+                            setState(() {
+                              btnIcon = Icons.play_arrow;
+                              isPlaying = true;
+                            });
+                          }
+                        },
+                        iconSize: 42.0,
+                        icon: Icon(btnIcon),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
