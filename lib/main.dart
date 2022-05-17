@@ -1,6 +1,6 @@
+//Importamos los paquetes
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-
 import 'components/custom_list_tile.dart';
 
 void main() {
@@ -10,7 +10,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  //Este widget es la raíz de su aplicación.
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -27,7 +27,7 @@ class MusicApp extends StatefulWidget {
 }
 
 class _MusicAppState extends State<MusicApp> {
-  //Music List
+  //Lista ade musicas(prueba)
   List musicList = [
     {
       'title': "Tech House Vibes",
@@ -61,20 +61,22 @@ class _MusicAppState extends State<MusicApp> {
     }
   ];
 
+  //Asignamos valores la variables para titulo de la cancion, cover y cantante
   String currentTitle = "";
   String currentCover = "";
   String currentSinger = "";
   IconData btnIcon = Icons.play_arrow;
 
-  //creamos el player
+  //Creamos el player
   AudioPlayer audioPlayer = AudioPlayer(mode: PlayerMode.MEDIA_PLAYER);
   bool isPlaying = false;
   String currentSong = "";
 
-  //creamos la barra de reproduccion
+  //Creamos la barra de reproduccion
   Duration duration = const Duration();
   Duration position = const Duration();
 
+  //Creamos los botones de reproduccion y pausa
   void playMusic(String url) async {
     if (isPlaying && currentSong != url) {
       audioPlayer.pause();
@@ -107,6 +109,7 @@ class _MusicAppState extends State<MusicApp> {
     });
   }
 
+  //Creamos el area de trabajo
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,6 +122,7 @@ class _MusicAppState extends State<MusicApp> {
         ),
         elevation: 0,
       ),
+      //Mostramos las canciones
       body: Column(
         children: [
           Expanded(
@@ -138,7 +142,7 @@ class _MusicAppState extends State<MusicApp> {
                       cover: musicList[index]['coverUrl'],
                     )),
           ),
-          //la segunda parte es del player
+          //Creamos el espacio del player
           Container(
             decoration: const BoxDecoration(color: Colors.white, boxShadow: [
               BoxShadow(
@@ -154,6 +158,7 @@ class _MusicAppState extends State<MusicApp> {
                   max: duration.inSeconds.toDouble(),
                   onChanged: (value) {},
                 ),
+                //Agregamos los covers de cada cancion
                 Padding(
                   padding: const EdgeInsets.only(
                       bottom: 8.0, left: 12.0, right: 12.0),
@@ -168,6 +173,7 @@ class _MusicAppState extends State<MusicApp> {
                             image: DecorationImage(
                                 image: NetworkImage(currentCover))),
                       ),
+                      //Agregamos el nombre del cantante y nombre de la cnacion
                       const SizedBox(width: 10.0),
                       Expanded(
                         child: Column(
@@ -191,6 +197,7 @@ class _MusicAppState extends State<MusicApp> {
                           ],
                         ),
                       ),
+                      //Funcion para reproducir y pausar las canciones
                       IconButton(
                         onPressed: () {
                           if (isPlaying) {
