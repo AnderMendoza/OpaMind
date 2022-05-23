@@ -152,11 +152,16 @@ class _MusicAppState extends State<MusicApp> {
             ]),
             child: Column(
               children: [
-                Slider.adaptive(
+                Slider(
                   value: position.inSeconds.toDouble(),
-                  min: 0.0,
+                  min: 0,
                   max: duration.inSeconds.toDouble(),
-                  onChanged: (value) {},
+                  onChanged: (value) async {
+                    final position = Duration(seconds: value.toInt());
+                    await audioPlayer.seek(position);
+
+                    await audioPlayer.resume();
+                  },
                 ),
                 //Agregamos los covers de cada cancion
                 Padding(
