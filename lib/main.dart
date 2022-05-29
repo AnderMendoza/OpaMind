@@ -58,6 +58,36 @@ class _MusicAppState extends State<MusicApp> {
       'url': "https://assets.mixkit.co/music/preview/mixkit-deep-urban-623.mp3",
       'coverUrl':
           "https://img.discogs.com/4RboV8xZEeh5nkLH9SJ0GJP7IVI=/fit-in/600x598/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-545921-1320012464.jpeg.jpg"
+    },
+    {
+      'title': "C.B.P.D",
+      'singer': "Arulo",
+      'url': "https://assets.mixkit.co/music/preview/mixkit-cbpd-400.mp3",
+      'coverUrl':
+          "https://th.bing.com/th/id/OIP.Ysb7cuBZ7nSfFHuf2SckfgHaHa?pid=ImgDet&rs=1"
+    },
+    {
+      'title': "Beautiful Dream",
+      'singer': "Diego Nava",
+      'url':
+          "https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3",
+      'coverUrl':
+          "https://yt3.ggpht.com/a/AATXAJye5rb-cA64f4wFGlnedjYv9EU_eAE_3aRC_Q=s900-c-k-c0xffffffff-no-rj-mo"
+    },
+    {
+      'title': "Pop 05",
+      'singer': "Grigoriy Nuzhny",
+      'url': "https://assets.mixkit.co/music/preview/mixkit-pop-05-695.mp3",
+      'coverUrl':
+          "https://cdn.domestika.org/c_limit,dpr_auto,f_auto,q_auto,w_820/v1499172102/content-items/002/002/393/05.mike-karolos-portadas-musicales-original.jpg?1499172102"
+    },
+    {
+      'title': "Motivating Mornings",
+      'singer': "Ahjay Stelino",
+      'url':
+          "https://assets.mixkit.co/music/preview/mixkit-motivating-mornings-33.mp3",
+      'coverUrl':
+          "https://th.bing.com/th/id/R.e73fcdc60b857dfb4766796cf5f8bab5?rik=NyUz%2brzU3iBPEA&pid=ImgRaw&r=0"
     }
   ];
 
@@ -206,13 +236,13 @@ class _MusicAppState extends State<MusicApp> {
                       IconButton(
                         onPressed: () {
                           if (isPlaying) {
-                            audioPlayer.pause();
+                            audioPlayer.resume();
                             setState(() {
                               btnIcon = Icons.pause;
                               isPlaying = false;
                             });
                           } else {
-                            audioPlayer.resume();
+                            audioPlayer.pause();
                             setState(() {
                               btnIcon = Icons.play_arrow;
                               isPlaying = true;
