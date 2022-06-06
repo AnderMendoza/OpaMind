@@ -11,6 +11,7 @@ var app = express();
 var producto_routes = require('./routes/producto');
 var rock_routes = require('./routes/rock');
 var pop_routes = require('./routes/pop');
+var home_music_routes = require('./routes/home_music');
 
 
 //MIDDLEWARE
@@ -30,6 +31,7 @@ app.use((req, res, next) => {
 app.use('/api/',producto_routes);
 app.use('/api/',rock_routes);
 app.use('/api/',pop_routes);
+app.use('/api/',home_music_routes);
 
 //EXPORTAR MODULO
 module.exports = app;
