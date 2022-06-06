@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class RockProvider extends ChangeNotifier {
 
-  String _baseUrl = "192.168.1.4:3999";
+  String _baseUrl = "192.168.1.8:3999";
 
   List<Rock> listaRocks = [];
 
