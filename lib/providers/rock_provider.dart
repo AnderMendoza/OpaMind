@@ -4,8 +4,7 @@ import 'package:OpaMind/models/rock_response.dart';
 import 'package:http/http.dart' as http;
 
 class RockProvider extends ChangeNotifier {
-  String _baseUrl =
-      "192.168.1.8:3999"; //agrega tu propia ip si quieres que funcione :D
+  String _baseUrl = "//agrega tu propia ip si quieres que funcione :D//:3999";
 
   List<Rock> listaRocks = [];
 
