@@ -24,6 +24,7 @@ Widget customListTile({String? title, String? singer, String? cover, onTap}) {
                 Text(
                   title!,
                   style: const TextStyle(
+                    color: Colors.white,
                     fontSize: 18.0,
                     fontWeight: FontWeight.w600,
                   ),
@@ -33,7 +34,7 @@ Widget customListTile({String? title, String? singer, String? cover, onTap}) {
                 ),
                 Text(
                   singer!,
-                  style: const TextStyle(color: Colors.grey, fontSize: 16.0),
+                  style: const TextStyle(color: Colors.white, fontSize: 16.0),
                 )
               ],
             ),
