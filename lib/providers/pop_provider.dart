@@ -1,17 +1,15 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:OpaMind/models/pop.dart';
 import 'package:OpaMind/models/pop_response.dart';
 import 'package:http/http.dart' as http;
 
 class PopProvider extends ChangeNotifier {
-
-  String _baseUrl = "192.168.1.8:3999";
+  String _baseUrl =
+      "192.168.1.8:3999"; //agrega tu propia ip si quieres que funcione :D
 
   List<Pop> listaPops = [];
 
-  PopProvider(){
+  PopProvider() {
     print('Ingresando a PopProvider');
     this.getOnPopList();
   }
