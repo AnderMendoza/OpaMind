@@ -44,3 +44,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Ignoring nodejs node_module folder dependencies
+/backend/node_modules
