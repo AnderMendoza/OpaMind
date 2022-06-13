@@ -4,13 +4,12 @@ import 'package:OpaMind/models/rock_response.dart';
 import 'package:http/http.dart' as http;
 
 class RockProvider extends ChangeNotifier {
-
   String _baseUrl = "192.168.1.10:3999";
 
   List<Rock> listaRocks = [];
 
   RockProvider() {
-    print('Ingresando a ProductoProvider');
+    print('Ingresando a RockProvider');
     this.getOnRockList();
   }
 
