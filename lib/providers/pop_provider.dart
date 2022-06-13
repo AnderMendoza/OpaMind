@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:OpaMind/models/pop.dart';
 import 'package:OpaMind/models/pop_response.dart';
@@ -11,7 +9,7 @@ class PopProvider extends ChangeNotifier {
 
   List<Pop> listaPops = [];
 
-  PopProvider(){
+  PopProvider() {
     print('Ingresando a PopProvider');
     this.getOnPopList();
   }

@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -15,47 +12,45 @@ class MenuLateral extends StatelessWidget {
           const DrawerHeader(
             child: Text(''),
             decoration: BoxDecoration(
-              image: DecorationImage(
-              image: AssetImage('assets/opamin logo.jpeg'),
-              fit:BoxFit.cover
-              )
-            ),
+                image: DecorationImage(
+                    image: AssetImage('assets/opamin logo.jpeg'),
+                    fit: BoxFit.cover)),
           ),
           ListTile(
-            title: const Text('Principal'),
+            title: const Text('Home'),
             onTap: () {
-               Navigator.pushNamed(context, 'ruta_principal'); 
+              Navigator.pushNamed(context, 'ruta_principal');
             },
           ),
           ListTile(
             title: const Text('Perfil'),
             onTap: () {
-               Navigator.pushNamed(context, 'ruta_perfil'); 
+              Navigator.pushNamed(context, 'ruta_perfil');
             },
           ),
           ListTile(
             title: const Text('Playlist'),
             onTap: () {
-               Navigator.pushNamed(context, 'ruta_playlist'); 
+              Navigator.pushNamed(context, 'ruta_playlist');
             },
           ),
           ListTile(
             title: const Text('Rock'),
             onTap: () {
-               Navigator.pushNamed(context, 'ruta_rocks');
+              Navigator.pushNamed(context, 'ruta_rocks');
             },
           ),
           ListTile(
             title: const Text('Pop'),
             onTap: () {
-               Navigator.pushNamed(context, 'ruta_pops');
+              Navigator.pushNamed(context, 'ruta_pops');
             },
           ),
           Divider(),
           ListTile(
             title: const Text('Cerrar Sesión'),
             onTap: () {
-               Navigator.pushNamed(context, 'ruta_login');
+              Navigator.pushNamed(context, 'ruta_login');
             },
           ),
         ],

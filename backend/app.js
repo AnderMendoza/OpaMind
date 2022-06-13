@@ -14,7 +14,6 @@ var pop_routes = require('./routes/pop');
 var jazz_routes = require('./routes/jazz');
 var home_music_routes = require('./routes/home_music');
 
-
 //MIDDLEWARE
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());

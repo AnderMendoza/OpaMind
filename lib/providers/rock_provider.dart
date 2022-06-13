@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:OpaMind/models/rock.dart';
 import 'package:OpaMind/models/rock_response.dart';
@@ -11,7 +9,7 @@ class RockProvider extends ChangeNotifier {
 
   List<Rock> listaRocks = [];
 
-  RockProvider(){
+  RockProvider() {
     print('Ingresando a ProductoProvider');
     this.getOnRockList();
   }

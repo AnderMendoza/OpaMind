@@ -27,8 +27,8 @@ class _LoginScreen extends State<LoginScreen> {
             children: <Widget>[
               new Image.asset(
                 'assets/opamin logo.jpeg',
-              width: 900.0,
-              height: 100.0,
+                width: 900.0,
+                height: 100.0,
               ),
               SizedBox(height: 20),
               TextFormField(
@@ -39,7 +39,9 @@ class _LoginScreen extends State<LoginScreen> {
                     hintText: '',
                     labelText: 'Usuario',
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0,)),
+                        borderRadius: BorderRadius.circular(
+                      20.0,
+                    )),
                     suffixIcon: Icon(Icons.person)),
                 controller: txtUser,
                 validator: (value) {
@@ -71,10 +73,11 @@ class _LoginScreen extends State<LoginScreen> {
               SizedBox(height: 30),
               Container(
                 child: OutlineButton(
-                  child: const Text('INGRESAR', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                  )),
+                  child: const Text('INGRESAR',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      )),
                   color: Color.fromARGB(255, 50, 54, 99),
                   textColor: Colors.white,
                   shape: StadiumBorder(),
@@ -85,8 +88,10 @@ class _LoginScreen extends State<LoginScreen> {
                         backgroundColor: Colors.blueAccent,
                       ));
                       // VALIDANDO
-                      if (txtUser.text == 'opamin' && txtPass.text == '12345') {
-                        Navigator.pushReplacementNamed(context, 'ruta_principal'); //para pasarlo a otra pantalla
+                      if (txtUser.text == 'opamind' &&
+                          txtPass.text == '12345') {
+                        Navigator.pushReplacementNamed(context,
+                            'ruta_principal'); //para pasarlo a otra pantalla
                       } else {
                         ScaffoldMessenger.of(context)
                             .showSnackBar(const SnackBar(
@@ -96,9 +101,8 @@ class _LoginScreen extends State<LoginScreen> {
                       }
                     }
                   },
-                  ),
                 ),
-              
+              ),
             ],
           ),
         ),

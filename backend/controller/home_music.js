@@ -12,7 +12,7 @@ var controller = {
             (error, dataHmusics) => {
                 if (error || !dataHmusics){
                     return res.status(404).send({
-                        message: "No se encontraron las canciones pop"
+                        message: "No se encontraron las canciones hmusic"
                     });
                 }else{
                     return res.status(200).send({
@@ -32,12 +32,12 @@ var controller = {
             (error, dataHmusics) => {
                 if(error || !dataHmusics){
                     return res.status(404).send({
-                        message: "No se encontraron las canciones pop"
+                        message: "No se encontraron las canciones hmusic"
                     });
                 }else{
                     return res.status(200).send({
                         status: "success",
-                        pops: dataHmusics[0]
+                        hmusics: dataHmusics[0]
                     });
                 }
             }
@@ -63,7 +63,7 @@ var controller = {
                         (error, result)=>{
                             if(error) {
                                 return res.status(404).send({
-                                    message: "No se pudo registrar las canciones pop"
+                                    message: "No se pudo registrar las canciones hmusic"
                                 });
                             }else{
                                 return res.status(200).send({
@@ -89,7 +89,7 @@ var controller = {
                                                 (error, result) => {
                                                     if(error) {
                                                         return res.status(404).send({
-                                                            message: "No se pudo editar las canciones pop"
+                                                            message: "No se pudo editar las canciones hmusic"
                                                         });
                                                     }else{
                                                         return res.status(200).send({
