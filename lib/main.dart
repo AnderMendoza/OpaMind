@@ -1,5 +1,6 @@
 import 'package:OpaMind/screens/home_music_screen.dart';
 import 'package:OpaMind/providers/home_music_provider.dart';
+import 'package:OpaMind/screens/reporte_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:OpaMind/screens/login_screen.dart';
 import 'package:OpaMind/screens/principal_screen.dart';
