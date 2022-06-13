@@ -56,6 +56,7 @@ class MyApp extends StatelessWidget {
           'ruta_jazzs': (_) => JazzScreen(),
           'ruta_technos': (_) => TechnoScreen(),
           'ruta_perfil': (_) => PrincipalScreen(),
+          "ruta_reporte": (_)=> ReporteScreen(),
         },
       ),
     );
