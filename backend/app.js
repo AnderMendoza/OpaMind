@@ -12,6 +12,7 @@ var producto_routes = require('./routes/producto');
 var rock_routes = require('./routes/rock');
 var pop_routes = require('./routes/pop');
 var jazz_routes = require('./routes/jazz');
+var techno_routes = require('./routes/techno');
 var home_music_routes = require('./routes/home_music');
 
 //MIDDLEWARE
@@ -32,6 +33,7 @@ app.use('/api/',producto_routes);
 app.use('/api/',rock_routes);
 app.use('/api/',pop_routes);
 app.use('/api/',jazz_routes);
+app.use('/api/',techno_routes);
 app.use('/api/',home_music_routes);
 
 //EXPORTAR MODULO
