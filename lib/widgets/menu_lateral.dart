@@ -46,6 +46,18 @@ class MenuLateral extends StatelessWidget {
               Navigator.pushNamed(context, 'ruta_pops');
             },
           ),
+          ListTile(
+            title: const Text('Jazz'),
+            onTap: () {
+              Navigator.pushNamed(context, 'ruta_jazzs');
+            },
+          ), 
+          ListTile(
+            title: const Text('Techno'),
+            onTap: () {
+              Navigator.pushNamed(context, 'ruta_technos');
+            },
+          ),          
           Divider(),
           ListTile(
             title: const Text('Cerrar Sesión'),

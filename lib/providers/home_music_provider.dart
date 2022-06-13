@@ -4,7 +4,7 @@ import 'package:OpaMind/models/home_music_response.dart';
 import 'package:http/http.dart' as http;
 
 class HmusicProvider extends ChangeNotifier {
-  String _baseUrl = "//agrega tu propia ip si quieres que funcione :D//:3999";
+  String _baseUrl = "192.168.1.10:3999";
 
   List<Hmusic> listaHmusics = [];
 

@@ -15,7 +15,7 @@ class TechnoProvider extends ChangeNotifier {
   }
 
   getOnTechnoList() async {
-    var url = Uri.http(_baseUrl, '/api/techno', {});
+    var url = Uri.http(_baseUrl, '/api/technos', {});
     final response = await http.get(url);
     print(response.body);
     final technoResponse = TechnoResponse.fromJson(response.body);

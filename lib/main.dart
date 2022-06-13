@@ -9,6 +9,10 @@ import 'package:OpaMind/screens/rock_screen.dart';
 import 'package:OpaMind/providers/rock_provider.dart';
 import 'package:OpaMind/screens/pop_screen.dart';
 import 'package:OpaMind/providers/pop_provider.dart';
+import 'package:OpaMind/screens/jazz_screen.dart';
+import 'package:OpaMind/providers/jazz_provider.dart';
+import 'package:OpaMind/screens/techno_screen.dart';
+import 'package:OpaMind/providers/techno_provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,6 +40,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => RockProvider()),
         ChangeNotifierProvider(create: (_) => PopProvider()),
         ChangeNotifierProvider(create: (_) => HmusicProvider()),
+        ChangeNotifierProvider(create: (_) => JazzProvider()),
+        ChangeNotifierProvider(create: (_) => TechnoProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -47,6 +53,9 @@ class MyApp extends StatelessWidget {
           'ruta_rocks': (_) => RockScreen(), // INTEGRANTE 3
           'ruta_pops': (_) => PopScreen(), // INTEGRANTE 3
           'reproductor': (_) => Reproductor(),
+          'ruta_jazzs': (_) => JazzScreen(),
+          'ruta_technos': (_) => TechnoScreen(),
+          'ruta_perfil': (_) => PrincipalScreen(),
         },
       ),
     );
