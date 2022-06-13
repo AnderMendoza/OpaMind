@@ -25,61 +25,84 @@ class _RockScreen extends State<RockScreen>{
         centerTitle: true,
       ),
       drawer: const MenuLateral(),
-      body:
-      Container(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                height: 200,
-                child: ListView.builder(
-                  itemCount: 10,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => Container(
-                    height: 200,
-                    width: 490,
-                    margin: EdgeInsets.all(5),
-                    child: Center(
-                      child: Image.network("https://media.istockphoto.com/vectors/rock-and-roll-banner-rock-and-roll-in-the-form-of-an-electric-guitar-vector-id1010461224?k=20&m=1010461224&s=170667a&w=0&h=pJBqjL7IX04KCO3QdfQkWmPgWey4m5pwBhjtOV6TyPg=",
-                       ),
-                      ),
+      body: Center(
+        child: ListView.builder(
+          itemCount: listaRocks.length,
+          itemBuilder: (context, index){
+            return Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Container(
+                  margin: EdgeInsets.only(top: 10, bottom: 10),
+                  width: double.infinity,
+                  height: 65,
+                  decoration: _cardBorders(),
+                  child:
+                  Stack(
+                    alignment: Alignment.bottomLeft,
+                    children: [
+                      Container(
+                        child: ListTile(
+                          onTap: (() {
+                          Navigator.pushReplacementNamed(context, 'reproductor');
+                          }),
+                          title: Text(listaRocks[index].cancion,
+                          style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                          color: Color.fromARGB(255, 255, 255, 255)
+                          )
+                          ),
+                          subtitle: Text(listaRocks[index].banda,
+                          style: TextStyle(
+                          color: Color.fromARGB(255, 151, 151, 151),
+                          fontSize: 15,
+                          ),
+                          ),
+                          leading: Image.network(listaRocks[index].portada, height: 100, width: 80),
+                          trailing: Icon(Icons.arrow_forward_ios,
+                          color: Color.fromARGB(255, 151, 151, 151),
+                          size: 30,),
+                        ),
+                      )
+                    ],
+                  )
                   ),
                 ),
-              ),
-              Flexible(child: ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                scrollDirection: Axis.vertical,
-                itemCount: listaRocks.length,
-                shrinkWrap: true,
-                itemBuilder: (context, index) => 
-                ListTile(
-                 onTap: (() {
-                   Navigator.pushReplacementNamed(context, 'reproductor');
-                 }),
-                 title: Text(listaRocks[index].cancion,
-                 style: TextStyle(
-                 fontWeight: FontWeight.bold,
-                 fontSize: 25,
-                 color: Color.fromARGB(255, 255, 255, 255)
-                 )
-                 ),
-                 subtitle: Text(listaRocks[index].banda,
-                 style: TextStyle(
-                 color: Color.fromARGB(255, 151, 151, 151),
-                 fontSize: 15,
-                 ),
-                 ),
-                 leading: Image.network("https://m.media-amazon.com/images/I/81RLLYEF3gL._SL1500_.jpg", height: 60, width: 60,),
-                 trailing: Icon(Icons.arrow_forward_ios,
-                 color: Color.fromARGB(255, 151, 151, 151),
-                 size: 30,),
-                ),
-              ))
-            ],
-          ),
-        )
-      )
+            );
+          },
+        ),
+      ),
     );
   }
 }
+
+class _ImagenFondo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: Container(
+          width: 80,
+          height: 100,
+          child: FadeInImage(
+            placeholder: AssetImage('assets/jar gif.gif'),
+            image: NetworkImage(''),
+            fit: BoxFit.cover,
+          ),
+        ),
+    );
+  }
+}
+
+BoxDecoration _cardBorders() => BoxDecoration(
+  color: Color.fromARGB(255, 50, 54, 99),
+  borderRadius: BorderRadius.circular(10),
+  boxShadow: [
+    BoxShadow(
+      color: Colors.black12,
+      offset: Offset(0,7),
+      blurRadius: 10
+    )
+  ]
+);

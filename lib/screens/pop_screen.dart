@@ -24,60 +24,84 @@ class _PopScreen extends State<PopScreen>{
         centerTitle: true,
       ),
       drawer: const MenuLateral(),
-      body: 
-Container(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                height: 250,
-                child: ListView.builder(
-                  itemCount: 10,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => Container(
-                    height: 250,
-                    width: 490,
-                    margin: EdgeInsets.all(3),
-                    child: Center(
-                      child: Image.network("https://st4.depositphotos.com/1001599/25731/v/450/depositphotos_257318874-stock-illustration-popular-music-concept-vector-illustration.jpg",
-                       ),
-                      ),
-                  ),
+      body: Center(
+        child: ListView.builder(
+          itemCount: listaPops.length,
+          itemBuilder: (context, index){
+            return Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Container(
+                  margin: EdgeInsets.only(top: 10, bottom: 10),
+                  width: double.infinity,
+                  height: 65,
+                  decoration: _cardBorders(),
+                  child: 
+                  Stack(
+                    alignment: Alignment.bottomLeft,
+                    children: [
+                      Container(
+                        child: ListTile(
+                          onTap: (() {
+                          Navigator.pushReplacementNamed(context, 'reproductor');
+                          }),
+                          title: Text(listaPops[index].cancion,
+                          style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                          color: Color.fromARGB(255, 255, 255, 255)
+                          )
+                          ),
+                          subtitle: Text(listaPops[index].banda,
+                          style: TextStyle(
+                          color: Color.fromARGB(255, 151, 151, 151),
+                          fontSize: 15,
+                          ),
+                          ),
+                          leading: Image.network(listaPops[index].portada, height: 100, width: 80),
+                          trailing: Icon(Icons.arrow_forward_ios,
+                          color: Color.fromARGB(255, 151, 151, 151),
+                          size: 30,),
+                        ),
+                      )
+                    ],
+                  )
                 ),
               ),
-              Flexible(child: ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                scrollDirection: Axis.vertical,
-                itemCount: listaPops.length,
-                shrinkWrap: true,
-                itemBuilder: (context, index) => 
-                ListTile(
-                 onTap: (() {  
-                 }),
-                 title: Text(listaPops[index].cancion,
-                 style: TextStyle(
-                 fontWeight: FontWeight.bold,
-                 fontSize: 25,
-                 color: Color.fromARGB(255, 255, 255, 255)
-                 )
-                 ),
-                 subtitle: Text(listaPops[index].banda,
-                 style: TextStyle(
-                 color: Color.fromARGB(255, 151, 151, 151),
-                 fontSize: 15,
-                 ),
-                 ),
-                 leading: Image.network("https://upload.wikimedia.org/wikipedia/en/b/b2/Good_Vibrations_single.jpg", height: 60, width: 60,),
-                 trailing: Icon(Icons.arrow_forward_ios,
-                 color: Color.fromARGB(255, 151, 151, 151),
-                 size: 30,),
-                ),
-              ))
-            ],
-          ),
-        )
-      )
+            );
+          },
+        ),
+      ),
     );
   }
 }
+
+class _ImagenFondo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: Container(
+          width: 80,
+          height: 100,
+          child: FadeInImage(
+            placeholder: AssetImage('assets/jar gif.gif'),
+            image: NetworkImage(''),
+            fit: BoxFit.cover,
+          ),
+        ),
+    );
+  }
+}
+
+BoxDecoration _cardBorders() => BoxDecoration(
+  color: Color.fromARGB(255, 50, 54, 99),
+  borderRadius: BorderRadius.circular(10),
+  boxShadow: [
+    BoxShadow(
+      color: Colors.black12,
+      offset: Offset(0,7),
+      blurRadius: 10
+    )
+  ]
+);

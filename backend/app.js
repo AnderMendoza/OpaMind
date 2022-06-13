@@ -11,6 +11,7 @@ var app = express();
 var producto_routes = require('./routes/producto');
 var rock_routes = require('./routes/rock');
 var pop_routes = require('./routes/pop');
+var jazz_routes = require('./routes/jazz');
 var home_music_routes = require('./routes/home_music');
 
 
@@ -31,6 +32,7 @@ app.use((req, res, next) => {
 app.use('/api/',producto_routes);
 app.use('/api/',rock_routes);
 app.use('/api/',pop_routes);
+app.use('/api/',jazz_routes);
 app.use('/api/',home_music_routes);
 
 //EXPORTAR MODULO
