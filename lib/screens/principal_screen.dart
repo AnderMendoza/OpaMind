@@ -23,8 +23,8 @@ class _PrincipalScreen extends State<PrincipalScreen>{
           children: <Widget>[
             header(
               username: 'mely.ksthvjk',
-              backgroundAsset: 'assets/fondousuario.jpg',
-              userAsset: 'assets/fondousuario.jpg',
+              backgroundAsset: 'assets/oficial.jpg',
+              userAsset: 'assets/fotoperfil.jpeg',
             ),
             Connections(
               Favoritas: 10,
@@ -32,8 +32,8 @@ class _PrincipalScreen extends State<PrincipalScreen>{
               Artistas: 125,
             ),
             Description(
-              text: 'Probablemente ese lugar es Mi Casa Contigo voy a sentirme rico Justo ese lugar Mi Casa Encendido de antemano, tu interruptor Sí Estaré cómodo aunque no hablemos Será mi casa solo si tú estás ahí Sabes que quiero esa Casa Sabes que tienes esa Casa Tu amor, tu amor, tu amor (lo echo de menos) Tu amor, tu amor, tu amor (lo quiero) Tu tacto, tu tacto, tu tacto (lo necesito)La la la la la la la la me encanta Mis pies parecen extraños en la puerta principal apagada Me siento raro bajo la manta que cierra mis ojos Siento que estoy flotando, los ojos me están dando vueltas Realmente me siento menos en este precioso lugar Me siento totalmente menos El mundo piensa que nosotros lo gobernamos Una gran casa, grandes coches, grandes anillos que queríamos Tengo todo lo que quería Siento que me falta algo ahora mismo La extraña sensación que la persona que lo consiguió todo siente Pero salgo por esta puerta porque ahora hay un lugar al que puedo volver cuando me voy',
-            )
+            text: 'Me encanta OPAMIND mantiene en orden mis playlits, las puedo escuchar en cualquier momento, puedo elegir el genero que mas me gusta, tambien puedo añadirlas y reservalas a su estreno, me gusta el diseño y espacio de la app, sin duda la mejor. Lorem ipsum dolor sit amet consectetur adipiscing elit potenti mi vulputate nullam, interdum quam pretium fermentum eu hac nulla augue vivamus vehicula. Lacus molestie leo pretium nisi turpis ut nullam at dis nisl, aliquet est morbi class ullamcorper mauris a habitant natoque. Vehicula leo ultrices ante ad in bibendum libero fringilla luctus netus placerat ac non, purus eget cras interdum vestibulum per ullamcorper tristique penatibus cum class ut.', 
+            ),
 
           ],
         ),
