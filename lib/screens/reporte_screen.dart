@@ -1,4 +1,3 @@
-
 import 'package:OpaMind/models/pop_report.dart';
 import 'package:OpaMind/providers/pop_provider.dart';
 import 'package:OpaMind/widgets/menu_lateral.dart';
@@ -16,26 +15,26 @@ class ReporteScreen extends StatefulWidget {
 class _ReporteScreenState extends State<ReporteScreen> {
   @override
   Widget build(BuildContext context) {
-
     final popProvider = Provider.of<PopProvider>(context);
     final List<PopReport> listaPopReport = popProvider.listaPopReport;
 
     List<charts.Series<PopReport, String>> serie = [
       charts.Series(
-        id:"PopProducto",
-        data: listaPopReport,
-        domainFn: (PopReport serie,_)=>serie.id,
-        measureFn: (PopReport serie,_)=>serie.count,
-        colorFn: (PopReport serie,_)=> charts.ColorUtil.fromDartColor(Colors.blueGrey)
-      ),
+          id: "PopProducto",
+          data: listaPopReport,
+          domainFn: (PopReport serie, _) => serie.id,
+          measureFn: (PopReport serie, _) => serie.count,
+          colorFn: (PopReport serie, _) =>
+              charts.ColorUtil.fromDartColor(Colors.blueGrey)),
     ];
 
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 69, 76, 149),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 50, 54, 99),
-        title: const Text('Reportes'),
-        centerTitle: true,),
+        title: const Text('Reporte Pop'),
+        centerTitle: true,
+      ),
       drawer: MenuLateral(),
       body: Center(
         child: Container(
@@ -47,9 +46,7 @@ class _ReporteScreenState extends State<ReporteScreen> {
               child: Column(
                 children: <Widget>[
                   Text('Reporte de canciones por bandas'),
-                  Expanded(
-                    child: charts.BarChart(serie, animate: true)
-                  )
+                  Expanded(child: charts.BarChart(serie, animate: true))
                 ],
               ),
             ),
