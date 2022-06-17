@@ -8,7 +8,7 @@ var controller = {
     JazzReport: function(req, res){
         console.log("______________");
         console.log("ENTRANDO A LA FUNCION REPORT");
-        db.collection("Jazz").aggregate([
+        db.collection("jazzs").aggregate([
             {$group:{_id: "$banda", count:{$sum:1}}}
         ]).toArray(
             (error, dataJazz) => {
