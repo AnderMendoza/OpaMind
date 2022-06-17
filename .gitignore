@@ -47,6 +47,3 @@ app.*.map.json
 
 # Ignoring nodejs node_module folder dependencies
 /backend/node_modules
-
-# Ignoring ip´s from providers
-/lib/providers
