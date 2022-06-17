@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 
 class PopProvider extends ChangeNotifier {
 
-  String _baseUrl = "192.168.18.7:3999";
+  String _baseUrl = "192.168.1.10:3999";
 
   List<Pop> listaPops = [];
   List<PopReport> listaPopReport = [];

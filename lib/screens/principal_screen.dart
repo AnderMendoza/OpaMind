@@ -14,8 +14,11 @@ class _PrincipalScreen extends State<PrincipalScreen>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color.fromARGB(255, 69, 76, 149),
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 50, 54, 99),
           title: Text('Principal'),
+          centerTitle: true,
         ),
         drawer: const MenuLateral() ,
         body: Column(

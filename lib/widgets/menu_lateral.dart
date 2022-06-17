@@ -63,6 +63,12 @@ class MenuLateral extends StatelessWidget {
           onTap: () {
               Navigator.pushNamed(context, 'ruta_reporte');
             },
+          ),
+          ListTile(
+          title: const Text('Reportes Rock'),
+          onTap: () {
+              Navigator.pushNamed(context, 'ruta_reporterock');
+            },
           ),          
           Divider(),
           ListTile(
