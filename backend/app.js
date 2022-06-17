@@ -17,6 +17,7 @@ var home_music_routes = require('./routes/home_music');
 var reporte_routes = require('./routes/reporte');
 var reporterock_routes = require('./routes/reporterock');
 var reportejazz_routes = require('./routes/reportejazz');
+var reporte_home_music =  require('./routes/reporte_home_music');
 
 //MIDDLEWARE
 app.use(bodyParser.urlencoded({ extended: false}));
@@ -41,6 +42,7 @@ app.use('/api/',home_music_routes);
 app.use('/api/',reporte_routes);
 app.use('/api/',reporterock_routes);
 app.use('/api/',reportejazz_routes);
+app.use('/api/',reporte_home_music);
 
 //EXPORTAR MODULO
 module.exports = app;

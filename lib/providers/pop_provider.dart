@@ -1,5 +1,3 @@
-
-
 import 'package:OpaMind/models/pop_report.dart';
 import 'package:OpaMind/models/pop_report_response.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,14 +6,12 @@ import 'package:OpaMind/models/pop_response.dart';
 import 'package:http/http.dart' as http;
 
 class PopProvider extends ChangeNotifier {
-
-  String _baseUrl = "192.168.1.10:3999";
+  String _baseUrl = "192.168.1.11:3999";
 
   List<Pop> listaPops = [];
   List<PopReport> listaPopReport = [];
 
-
-  PopProvider(){
+  PopProvider() {
     print('Ingresando a PopProvider');
     this.getOnPopList();
     this.reportePop();
@@ -31,7 +27,7 @@ class PopProvider extends ChangeNotifier {
   }
 
   reportePop() async {
-    var url =Uri.http(_baseUrl, 'api/reportes/PopReport');
+    var url = Uri.http(_baseUrl, 'api/reportes/PopReport');
     final response = await http.get(url);
     final popReportResponse = PopReportResponse.fromJson(response.body);
     listaPopReport = popReportResponse.popReport;

@@ -6,8 +6,7 @@ import 'package:OpaMind/models/jazz_response.dart';
 import 'package:http/http.dart' as http;
 
 class JazzProvider extends ChangeNotifier {
-
-  String _baseUrl = "192.168.1.10:3999";
+  String _baseUrl = "192.168.1.11:3999";
 
   List<Jazz> listaJazzs = [];
   List<JazzReport> listaJazzReport = [];
@@ -18,7 +17,6 @@ class JazzProvider extends ChangeNotifier {
     this.reporteJazz();
   }
 
-
   getOnJazzList() async {
     var url = Uri.http(_baseUrl, '/api/jazzs', {});
     final response = await http.get(url);
@@ -27,8 +25,9 @@ class JazzProvider extends ChangeNotifier {
     listaJazzs = jazzResponse.jazzs;
     notifyListeners();
   }
+
   reporteJazz() async {
-    var url =Uri.http(_baseUrl, 'api/reportes/JazzReport');
+    var url = Uri.http(_baseUrl, 'api/reportes/JazzReport');
     final response = await http.get(url);
     final jazzReportResponse = JazzReportResponse.fromJson(response.body);
     listaJazzReport = jazzReportResponse.jazzReport;

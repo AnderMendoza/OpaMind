@@ -1,5 +1,6 @@
 import 'package:OpaMind/screens/home_music_screen.dart';
 import 'package:OpaMind/providers/home_music_provider.dart';
+import 'package:OpaMind/screens/reporte_home_music.dart';
 import 'package:OpaMind/screens/reporte_screen.dart';
 import 'package:OpaMind/screens/reporterock_screen.dart';
 import 'package:OpaMind/screens/reportejazz_screen.dart';
@@ -59,9 +60,10 @@ class MyApp extends StatelessWidget {
           'ruta_jazzs': (_) => JazzScreen(),
           'ruta_technos': (_) => TechnoScreen(),
           'ruta_perfil': (_) => PrincipalScreen(),
-          "ruta_reporte": (_)=> ReporteScreen(),
-          "ruta_reporterock": (_)=> ReporteRockScreen(),
-          "ruta_reportejazz": (_)=> ReporteJazzScreen(),
+          "ruta_reporte": (_) => ReporteScreen(),
+          "ruta_reporterock": (_) => ReporteRockScreen(),
+          "ruta_reportejazz": (_) => ReporteJazzScreen(),
+          "ruta_reporte_home_music": (_) => ReporteHmusicScreen(),
         },
       ),
     );

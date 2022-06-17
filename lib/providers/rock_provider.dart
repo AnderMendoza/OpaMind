@@ -6,7 +6,7 @@ import 'package:OpaMind/models/rock_response.dart';
 import 'package:http/http.dart' as http;
 
 class RockProvider extends ChangeNotifier {
-  String _baseUrl = "192.168.1.10:3999";
+  String _baseUrl = "192.168.1.11:3999";
 
   List<Rock> listaRocks = [];
   List<RockReport> listaRockReport = [];
@@ -27,7 +27,7 @@ class RockProvider extends ChangeNotifier {
   }
 
   reporteRock() async {
-    var url =Uri.http(_baseUrl, 'api/reportes/RockReport');
+    var url = Uri.http(_baseUrl, 'api/reportes/RockReport');
     final response = await http.get(url);
     final rockReportResponse = RockReportResponse.fromJson(response.body);
     listaRockReport = rockReportResponse.rockReport;

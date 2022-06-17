@@ -51,7 +51,7 @@ class MenuLateral extends StatelessWidget {
             onTap: () {
               Navigator.pushNamed(context, 'ruta_jazzs');
             },
-          ), 
+          ),
           ListTile(
             title: const Text('Techno'),
             onTap: () {
@@ -59,23 +59,29 @@ class MenuLateral extends StatelessWidget {
             },
           ),
           ListTile(
-          title: const Text('Reportes'),
-          onTap: () {
+            title: const Text('Reportes'),
+            onTap: () {
               Navigator.pushNamed(context, 'ruta_reporte');
             },
           ),
           ListTile(
-          title: const Text('Reportes Rock'),
-          onTap: () {
+            title: const Text('Reportes Home Music'),
+            onTap: () {
+              Navigator.pushNamed(context, 'ruta_reporte_home_music');
+            },
+          ),
+          ListTile(
+            title: const Text('Reportes Rock'),
+            onTap: () {
               Navigator.pushNamed(context, 'ruta_reporterock');
             },
           ),
           ListTile(
-          title: const Text('Reportes Jazz'),
-          onTap: () {
+            title: const Text('Reportes Jazz'),
+            onTap: () {
               Navigator.pushNamed(context, 'ruta_reportejazz');
             },
-          ),               
+          ),
           Divider(),
           ListTile(
             title: const Text('Cerrar Sesión'),
