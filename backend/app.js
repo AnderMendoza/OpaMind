@@ -14,6 +14,7 @@ var pop_routes = require('./routes/pop');
 var jazz_routes = require('./routes/jazz');
 var techno_routes = require('./routes/techno');
 var home_music_routes = require('./routes/home_music');
+var reporte_routes = require('./routes/reporte');
 
 //MIDDLEWARE
 app.use(bodyParser.urlencoded({ extended: false}));
@@ -35,6 +36,7 @@ app.use('/api/',pop_routes);
 app.use('/api/',jazz_routes);
 app.use('/api/',techno_routes);
 app.use('/api/',home_music_routes);
+app.use('/api/',reporte_routes);
 
 //EXPORTAR MODULO
 module.exports = app;
