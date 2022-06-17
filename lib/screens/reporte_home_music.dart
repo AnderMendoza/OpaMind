@@ -33,7 +33,7 @@ class _ReporteHmusicScreenState extends State<ReporteHmusicScreen> {
       backgroundColor: Color.fromARGB(255, 69, 76, 149),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 50, 54, 99),
-        title: const Text('Reporte de las Canciones de Home Music'),
+        title: const Text('Reporte Home Music'),
         centerTitle: true,
       ),
       drawer: MenuLateral(),
