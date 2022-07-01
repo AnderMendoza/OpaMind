@@ -1,15 +1,12 @@
-import 'package:OpaMind/models/jazz_report.dart';
-import 'package:OpaMind/models/jazz_report_response.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:OpaMind/models/jazz.dart';
 import 'package:OpaMind/models/jazz_response.dart';
 import 'package:http/http.dart' as http;
 
 class JazzProvider extends ChangeNotifier {
-  String _baseUrl = "192.168.1.11:3999";
+  String _baseUrl = "opamind-api.herokuapp.com";
 
   List<Jazz> listaJazzs = [];
-  List<JazzReport> listaJazzReport = [];
 
   JazzProvider() {
     print('Ingresando a JazzProvider');
@@ -29,8 +26,5 @@ class JazzProvider extends ChangeNotifier {
   reporteJazz() async {
     var url = Uri.http(_baseUrl, 'api/reportes/JazzReport');
     final response = await http.get(url);
-    final jazzReportResponse = JazzReportResponse.fromJson(response.body);
-    listaJazzReport = jazzReportResponse.jazzReport;
-    notifyListeners();
   }
 }
