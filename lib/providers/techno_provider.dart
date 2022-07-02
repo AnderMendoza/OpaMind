@@ -4,7 +4,7 @@ import 'package:OpaMind/models/techno_response.dart';
 import 'package:http/http.dart' as http;
 
 class TechnoProvider extends ChangeNotifier {
-  String _baseUrl = "192.168.1.11:3999";
+  String _baseUrl = "opamind-api.herokuapp.com";
 
   List<Techno> listaTechnos = [];
 

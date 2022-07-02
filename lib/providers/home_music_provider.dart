@@ -7,7 +7,7 @@ import '../models/home_music_report.dart';
 import '../models/home_music_report_response.dart';
 
 class HmusicProvider extends ChangeNotifier {
-  String _baseUrl = "192.168.1.11:3999";
+  String _baseUrl = "opamind-api.herokuapp.com";
 
   List<Hmusic> listaHmusics = [];
   List<HmusicReport> listaHmusicReport = [];

@@ -6,7 +6,7 @@ import 'package:OpaMind/models/pop_response.dart';
 import 'package:http/http.dart' as http;
 
 class PopProvider extends ChangeNotifier {
-  String _baseUrl = "192.168.1.11:3999";
+  String _baseUrl = "opamind-api.herokuapp.com";
 
   List<Pop> listaPops = [];
   List<PopReport> listaPopReport = [];

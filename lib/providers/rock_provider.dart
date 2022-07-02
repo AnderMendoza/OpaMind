@@ -6,7 +6,7 @@ import 'package:OpaMind/models/rock_response.dart';
 import 'package:http/http.dart' as http;
 
 class RockProvider extends ChangeNotifier {
-  String _baseUrl = "192.168.1.11:3999";
+  String _baseUrl = "opamind-api.herokuapp.com";
 
   List<Rock> listaRocks = [];
   List<RockReport> listaRockReport = [];
