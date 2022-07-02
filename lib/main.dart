@@ -3,7 +3,6 @@ import 'package:OpaMind/providers/home_music_provider.dart';
 import 'package:OpaMind/screens/reporte_home_music.dart';
 import 'package:OpaMind/screens/reporte_screen.dart';
 import 'package:OpaMind/screens/reporterock_screen.dart';
-import 'package:OpaMind/screens/reportejazz_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:OpaMind/screens/login_screen.dart';
 import 'package:OpaMind/screens/principal_screen.dart';
@@ -25,20 +24,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /*
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'POS APP',
-      initialRoute: 'ruta_login',
-      routes: {
-        'ruta_login': (_) => LoginScreen(),
-        'ruta_register': (_) => RegisterScreen(),
-        'ruta_principal': (_) => PrincipalScreen(),
-        'ruta_productos': (_) => ProductoScreen(),
-        'ruta_productos_form': (_) => ProductoFormScreen(),
-      },
-    );
-    */
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => RockProvider()),
@@ -62,7 +47,6 @@ class MyApp extends StatelessWidget {
           'ruta_perfil': (_) => PrincipalScreen(),
           "ruta_reporte": (_) => ReporteScreen(),
           "ruta_reporterock": (_) => ReporteRockScreen(),
-          "ruta_reportejazz": (_) => ReporteJazzScreen(),
           "ruta_reporte_home_music": (_) => ReporteHmusicScreen(),
         },
       ),
