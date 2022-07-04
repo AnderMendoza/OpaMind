@@ -18,7 +18,7 @@ import 'package:OpaMind/providers/jazz_provider.dart';
 import 'package:OpaMind/screens/techno_screen.dart';
 import 'package:OpaMind/providers/techno_provider.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
