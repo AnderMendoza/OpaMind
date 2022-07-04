@@ -1,6 +1,8 @@
 //Importamos los paquetes
 import 'package:OpaMind/providers/home_music_provider.dart';
+import 'package:OpaMind/screens/login2_screen.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../components/custom_list_tile.dart';
@@ -8,11 +10,19 @@ import '../models/home_music.dart';
 import 'package:OpaMind/widgets/menu_lateral.dart';
 
 class HmusicScreen extends StatefulWidget {
+  const HmusicScreen({Key? key}) : super(key: key);
+
   @override
   createState() => _HmusicScreen();
 }
 
 class _HmusicScreen extends State<HmusicScreen> {
+  //Inicializamos Firebase App
+  Future<FirebaseApp> _initializeFirebase() async {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
+  }
+
   //Asignamos valores la variables para titulo de la cancion, cover y cantante
   String currentTitle = "";
   String currentCover = "";
@@ -68,11 +78,11 @@ class _HmusicScreen extends State<HmusicScreen> {
     final List<Hmusic> listaHmusics = hmusicProvider.listaHmusics;
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 69, 76, 149),
+      backgroundColor: const Color.fromARGB(255, 69, 76, 149),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 50, 54, 99),
+        backgroundColor: const Color.fromARGB(255, 50, 54, 99),
         title: const Text(
-          "Buen día 🌈",
+          "Bienvenido 🌈",
           style: TextStyle(color: Colors.white),
         ),
         elevation: 0,
@@ -145,7 +155,7 @@ class _HmusicScreen extends State<HmusicScreen> {
                             Text(
                               currentTitle,
                               style: const TextStyle(
-                                color: const Color.fromARGB(255, 251, 251, 251),
+                                color: Color.fromARGB(255, 251, 251, 251),
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -164,7 +174,7 @@ class _HmusicScreen extends State<HmusicScreen> {
                       ),
                       //Funcion para reproducir y pausar las canciones
                       IconButton(
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: const Color.fromARGB(255, 255, 255, 255),
                         onPressed: () {
                           if (isPlaying) {
                             audioPlayer.resume();

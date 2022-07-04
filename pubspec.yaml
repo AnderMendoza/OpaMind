@@ -38,6 +38,9 @@ dependencies:
   provider: ^6.0.3
   http: ^0.13.4
   charts_flutter: ^0.12.0
+  firebase_core: ^1.10.2
+  firebase_auth: ^3.3.0
+  firebase_auth_web: ^3.3.19
 
 dev_dependencies:
   flutter_test:
