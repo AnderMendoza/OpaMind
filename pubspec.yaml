@@ -41,6 +41,7 @@ dependencies:
   firebase_core: ^1.10.2
   firebase_auth: ^3.3.0
   firebase_auth_web: ^3.3.19
+  card_swiper: ^2.0.4
 
 dev_dependencies:
   flutter_test:

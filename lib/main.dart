@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
           'ruta_principal': (_) => HmusicScreen(),
           'ruta_rocks': (_) => RockScreen(),
           'ruta_pops': (_) => PopScreen(),
-          'reproductor': (_) => Reproductor(),
+          'reproductor': (_) => ReproductorPops(),
           'ruta_jazzs': (_) => JazzScreen(),
           'ruta_technos': (_) => TechnoScreen(),
           'ruta_perfil': (_) => PrincipalScreen(),

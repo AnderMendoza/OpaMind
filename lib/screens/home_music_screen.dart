@@ -86,6 +86,12 @@ class _HmusicScreen extends State<HmusicScreen> {
           style: TextStyle(color: Colors.white),
         ),
         elevation: 0,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {},
+          )
+        ],
       ),
       drawer: const MenuLateral(),
       //Mostramos las canciones

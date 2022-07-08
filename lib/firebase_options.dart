@@ -70,8 +70,10 @@ class DefaultFirebaseOptions {
     messagingSenderId: '497043800823',
     projectId: 'opamind-15104',
     storageBucket: 'opamind-15104.appspot.com',
-    androidClientId: '497043800823-24ub1d6kdsrgnc0os983rhpshni0csoc.apps.googleusercontent.com',
-    iosClientId: '497043800823-qg6vmfafte941e5610c8n1plgh4vigiv.apps.googleusercontent.com',
+    androidClientId:
+        '497043800823-24ub1d6kdsrgnc0os983rhpshni0csoc.apps.googleusercontent.com',
+    iosClientId:
+        '497043800823-qg6vmfafte941e5610c8n1plgh4vigiv.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterApplication1',
   );
 }

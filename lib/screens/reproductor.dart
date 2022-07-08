@@ -1,13 +1,18 @@
 
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:provider/provider.dart';
 
-class Reproductor extends StatefulWidget {
+import '../models/pop.dart';
+import '../providers/pop_provider.dart';
+
+class ReproductorPops extends StatefulWidget {
   @override
- createState() => _ReproductorState();
+ createState() => _ReproductorPopsState();
 }
 
-class _ReproductorState extends State<Reproductor> {
+class _ReproductorPopsState extends State<ReproductorPops> {
 
   final audioPlayer = AudioPlayer();
   bool isPlaying = false;
@@ -69,7 +74,13 @@ class _ReproductorState extends State<Reproductor> {
   }
 
   @override
-  Widget build(BuildContext context)  => Scaffold(
+  Widget build(BuildContext context){
+    final popProvider = Provider.of<PopProvider>(context);
+    final List<Pop> listaPops = popProvider.listaPops;
+
+    final size = MediaQuery.of(context).size;
+
+    return Scaffold(
       backgroundColor: Colors.grey,
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -78,26 +89,15 @@ class _ReproductorState extends State<Reproductor> {
             children: [
               ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child:Image.network(
-                "https://i.scdn.co/image/ab67616d0000b273a7292b6863258e889b78d787",
-                width: double.infinity,
-                height: 350,
-                fit: BoxFit.cover,
-                ),
-              ),
-              const SizedBox(height: 32),
-              const Text(
-                "Show Me How to Live",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 4),
-              const Text(
-                "AudioSlave",
-                style: TextStyle(fontSize: 20),
-              ),
+              child:Swiper(
+                itemCount: listaPops.length,
+                layout: SwiperLayout.STACK,
+                itemWidth: size.width * 0.5,
+                itemHeight: size.height * 0.6,
+                itemBuilder: (BuildContext context, int index){
+                return _cardPops(listaPops[index]);
+                },
+              )),
               Slider(
                 min: 0,
                 max: duration.inSeconds.toDouble(),
@@ -136,7 +136,84 @@ class _ReproductorState extends State<Reproductor> {
                 ),
               )
             ]
-          ),
-        )
+          ))
       );
+    }
   }
+
+class _cardPops extends StatelessWidget{
+  final Pop reproductorPops;
+  _cardPops(this.reproductorPops);
+  @override 
+  Widget build(BuildContext context) {
+
+  final size = MediaQuery.of(context).size;
+    return Container(
+      margin: EdgeInsets.only(top: 90, bottom: 20),
+      width: double.infinity,
+      height: size.height * 0.5,
+      decoration: _cardBorders(),
+      child: Stack(
+        alignment: Alignment.bottomLeft,
+        children:[_ImagenFondo(reproductorPops), _Info(reproductorPops)],
+    )
+    );
+  }
+  BoxDecoration _cardBorders() => BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(25),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black12,
+        offset: Offset(0,7),
+        blurRadius: 10
+      )
+    ]
+  );
+}
+
+class _ImagenFondo extends StatelessWidget {
+  final Pop reproductorPops;
+  _ImagenFondo(this.reproductorPops);
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(25),
+      child: Container(
+        width: double.infinity,
+        height: 300,
+        child: FadeInImage(
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            image: NetworkImage(reproductorPops.portada),
+            fit: BoxFit.cover),
+      ),
+    );
+  }
+}
+
+class _Info extends StatelessWidget {
+  final Pop reproductorPops;
+  _Info(this.reproductorPops);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(25),
+          bottomRight: Radius.circular(25)),
+          color: Colors.grey),
+      child: ListTile(
+        title: Text(
+          reproductorPops.cancion,
+          style: const TextStyle(
+              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
+        ),
+        subtitle: Text(
+        reproductorPops.banda.toString(),
+          style: const TextStyle(
+              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
+        ),
+      ),
+    );
+  }
+}
