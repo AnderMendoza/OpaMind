@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:OpaMind/screens/login2_screen.dart';
 import 'package:OpaMind/screens/principal_screen.dart';
 import 'package:OpaMind/screens/reproductor.dart';
+import 'package:OpaMind/screens/reproductor_rock_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:OpaMind/screens/rock_screen.dart';
 import 'package:OpaMind/providers/rock_provider.dart';
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
           'ruta_rocks': (_) => RockScreen(),
           'ruta_pops': (_) => PopScreen(),
           'reproductor': (_) => ReproductorPops(),
+          'reproductor_rock': (_) => ReproductorRocks(),
           'ruta_jazzs': (_) => JazzScreen(),
           'ruta_technos': (_) => TechnoScreen(),
           'ruta_perfil': (_) => PrincipalScreen(),

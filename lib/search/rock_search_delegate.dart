@@ -35,6 +35,44 @@ class RockSearchDelegate extends SearchDelegate<Rock> {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    return ListView();
+    final listaFiltrada = query.isEmpty
+        ? listaRocks
+        : listaRocks
+            .where((rock) =>
+                rock.cancion.toLowerCase().contains(query.toLowerCase()))
+            .toList();
+
+    final listaFiltrada2 = query.isEmpty
+        ? listaRocks
+        : listaRocks
+            .where((rock) =>
+                rock.banda.toLowerCase().contains(query.toLowerCase()))
+            .toList();
+
+    return ListView.builder(
+      itemCount: listaFiltrada.length,
+      itemBuilder: (BuildContext context, int index) {
+        return _cardRock(listaFiltrada[index], context);
+      },
+    );
   }
+}
+
+Widget _cardRock(Rock rockFiltrado, context) {
+  return Card(
+    child: Column(
+      children: <Widget>[
+        ListTile(
+          leading:
+              CircleAvatar(backgroundImage: NetworkImage(rockFiltrado.portada)),
+          title: Text(rockFiltrado.cancion),
+          subtitle: Text(rockFiltrado.banda),
+          onTap: () {
+            Navigator.pushNamed(context, 'reproductor_rock',
+                arguments: rockFiltrado);
+          },
+        )
+      ],
+    ),
+  );
 }
