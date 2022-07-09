@@ -53,7 +53,7 @@ class _RockScreen extends State<RockScreen> {
                           child: ListTile(
                             onTap: (() {
                               Navigator.pushReplacementNamed(
-                                  context, 'reproductor');
+                                  context, 'reproductor_rock');
                             }),
                             title: Text(listaRocks[index].cancion,
                                 style: TextStyle(

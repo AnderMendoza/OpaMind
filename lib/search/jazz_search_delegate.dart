@@ -1,10 +1,10 @@
-import 'package:OpaMind/models/rock.dart';
+import 'package:OpaMind/models/jazz.dart';
 import 'package:flutter/material.dart';
 
-class RockSearchDelegate extends SearchDelegate<Rock> {
-  final List<Rock> listaRocks;
+class JazzSearchDelegate extends SearchDelegate<Jazz> {
+  final List<Jazz> listaJazzs;
 
-  RockSearchDelegate(this.listaRocks);
+  JazzSearchDelegate(this.listaJazzs);
 
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -24,7 +24,7 @@ class RockSearchDelegate extends SearchDelegate<Rock> {
         icon: Icon(Icons.arrow_back),
         onPressed: () {
           close(context,
-              Rock(id: '', rockId: 0, portada: '', cancion: '', banda: ''));
+              Jazz(id: '', jazzId: 0, portada: '', cancion: '', banda: ''));
         });
   }
 
@@ -36,33 +36,33 @@ class RockSearchDelegate extends SearchDelegate<Rock> {
   @override
   Widget buildSuggestions(BuildContext context) {
     final listaFiltrada = query.isEmpty
-        ? listaRocks
-        : listaRocks
-            .where((rock) =>
-                rock.banda.toLowerCase().contains(query.toLowerCase()))
+        ? listaJazzs
+        : listaJazzs
+            .where((jazz) =>
+                jazz.banda.toLowerCase().contains(query.toLowerCase()))
             .toList();
 
     return ListView.builder(
       itemCount: listaFiltrada.length,
       itemBuilder: (BuildContext context, int index) {
-        return _cardRock(listaFiltrada[index], context);
+        return _cardJazz(listaFiltrada[index], context);
       },
     );
   }
 }
 
-Widget _cardRock(Rock rockFiltrado, context) {
+Widget _cardJazz(Jazz jazzFiltrado, context) {
   return Card(
     child: Column(
       children: <Widget>[
         ListTile(
           leading:
-              CircleAvatar(backgroundImage: NetworkImage(rockFiltrado.portada)),
-          title: Text(rockFiltrado.cancion),
-          subtitle: Text(rockFiltrado.banda),
+              CircleAvatar(backgroundImage: NetworkImage(jazzFiltrado.portada)),
+          title: Text(jazzFiltrado.cancion),
+          subtitle: Text(jazzFiltrado.banda),
           onTap: () {
-            Navigator.pushNamed(context, 'reproductor_rock',
-                arguments: rockFiltrado);
+            Navigator.pushNamed(context, 'reproductor_jazz',
+                arguments: jazzFiltrado);
           },
         )
       ],
