@@ -1,3 +1,4 @@
+import 'package:OpaMind/search/jazz_search_delegate.dart';
 import 'package:flutter/material.dart';
 import 'package:OpaMind/providers/jazz_provider.dart';
 import 'package:OpaMind/widgets/menu_lateral.dart';
@@ -24,7 +25,10 @@ class _JazzScreen extends State<JazzScreen> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
-            onPressed: () {},
+            onPressed: () {
+              showSearch(
+                  context: context, delegate: JazzSearchDelegate(listaJazzs));
+            },
           )
         ],
       ),
@@ -48,7 +52,7 @@ class _JazzScreen extends State<JazzScreen> {
                           child: ListTile(
                             onTap: (() {
                               Navigator.pushReplacementNamed(
-                                  context, 'reproductor');
+                                  context, 'reproductor_jazz');
                             }),
                             title: Text(listaJazzs[index].cancion,
                                 style: TextStyle(

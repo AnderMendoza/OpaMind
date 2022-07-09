@@ -1,10 +1,10 @@
-import 'package:OpaMind/models/rock.dart';
+import 'package:OpaMind/models/pop.dart';
 import 'package:flutter/material.dart';
 
-class RockSearchDelegate extends SearchDelegate<Rock> {
-  final List<Rock> listaRocks;
+class PopSearchDelegate extends SearchDelegate<Pop> {
+  final List<Pop> listaPops;
 
-  RockSearchDelegate(this.listaRocks);
+  PopSearchDelegate(this.listaPops);
 
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -23,8 +23,15 @@ class RockSearchDelegate extends SearchDelegate<Rock> {
     return IconButton(
         icon: Icon(Icons.arrow_back),
         onPressed: () {
-          close(context,
-              Rock(id: '', rockId: 0, portada: '', cancion: '', banda: ''));
+          close(
+              context,
+              Pop(
+                  id: '',
+                  popId: 0,
+                  portada: '',
+                  cancion: '',
+                  banda: '',
+                  url: ''));
         });
   }
 
@@ -36,33 +43,33 @@ class RockSearchDelegate extends SearchDelegate<Rock> {
   @override
   Widget buildSuggestions(BuildContext context) {
     final listaFiltrada = query.isEmpty
-        ? listaRocks
-        : listaRocks
-            .where((rock) =>
-                rock.banda.toLowerCase().contains(query.toLowerCase()))
+        ? listaPops
+        : listaPops
+            .where(
+                (pop) => pop.banda.toLowerCase().contains(query.toLowerCase()))
             .toList();
 
     return ListView.builder(
       itemCount: listaFiltrada.length,
       itemBuilder: (BuildContext context, int index) {
-        return _cardRock(listaFiltrada[index], context);
+        return _cardPop(listaFiltrada[index], context);
       },
     );
   }
 }
 
-Widget _cardRock(Rock rockFiltrado, context) {
+Widget _cardPop(Pop popFiltrado, context) {
   return Card(
     child: Column(
       children: <Widget>[
         ListTile(
           leading:
-              CircleAvatar(backgroundImage: NetworkImage(rockFiltrado.portada)),
-          title: Text(rockFiltrado.cancion),
-          subtitle: Text(rockFiltrado.banda),
+              CircleAvatar(backgroundImage: NetworkImage(popFiltrado.portada)),
+          title: Text(popFiltrado.cancion),
+          subtitle: Text(popFiltrado.banda),
           onTap: () {
-            Navigator.pushNamed(context, 'reproductor_rock',
-                arguments: rockFiltrado);
+            Navigator.pushNamed(context, 'reproductor_pop',
+                arguments: popFiltrado);
           },
         )
       ],

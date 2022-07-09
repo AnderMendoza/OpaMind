@@ -1,3 +1,4 @@
+import 'package:OpaMind/search/pop_search_delegate.dart';
 import 'package:flutter/material.dart';
 import 'package:OpaMind/providers/pop_provider.dart';
 import 'package:OpaMind/widgets/menu_lateral.dart';
@@ -24,7 +25,10 @@ class _PopScreen extends State<PopScreen> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
-            onPressed: () {},
+            onPressed: () {
+              showSearch(
+                  context: context, delegate: PopSearchDelegate(listaPops));
+            },
           )
         ],
       ),
@@ -48,7 +52,7 @@ class _PopScreen extends State<PopScreen> {
                           child: ListTile(
                             onTap: (() {
                               Navigator.pushReplacementNamed(
-                                  context, 'reproductor');
+                                  context, 'reproductor_pop');
                             }),
                             title: Text(listaPops[index].cancion,
                                 style: TextStyle(

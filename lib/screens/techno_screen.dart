@@ -3,6 +3,7 @@ import 'package:OpaMind/providers/techno_provider.dart';
 import 'package:OpaMind/widgets/menu_lateral.dart';
 import 'package:OpaMind/models/techno.dart';
 import 'package:provider/provider.dart';
+import 'package:OpaMind/search/techno_search_delegate.dart';
 
 class TechnoScreen extends StatefulWidget {
   @override
@@ -24,7 +25,11 @@ class _TechnoScreen extends State<TechnoScreen> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
-            onPressed: () {},
+            onPressed: () {
+              showSearch(
+                  context: context,
+                  delegate: TechnoSearchDelegate(listaTechnos));
+            },
           )
         ],
       ),
@@ -48,7 +53,7 @@ class _TechnoScreen extends State<TechnoScreen> {
                           child: ListTile(
                             onTap: (() {
                               Navigator.pushReplacementNamed(
-                                  context, 'reproductor');
+                                  context, 'reproductor_techno');
                             }),
                             title: Text(listaTechnos[index].cancion,
                                 style: TextStyle(
