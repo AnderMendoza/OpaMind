@@ -1,16 +1,16 @@
-import 'package:OpaMind/screens/home_music_screen.dart';
+import 'package:OpaMind/screens/home_screen.dart';
+import 'package:OpaMind/screens/sign_in_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 
-class Login2Screen extends StatefulWidget {
-  const Login2Screen({Key? key}) : super(key: key);
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
-  _Login2ScreenState createState() => _Login2ScreenState();
+  _SignUpScreenState createState() => _SignUpScreenState();
 }
 
-class _Login2ScreenState extends State<Login2Screen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   //funcion login
   static Future<User?> loginUsingEmailPassword(
       {required String email,
@@ -24,6 +24,7 @@ class _Login2ScreenState extends State<Login2Screen> {
       user = userCredential.user;
     } on FirebaseAuthException catch (e) {
       if (e.code == "user-not-found") {
+        // ignore: avoid_print
         print("Ningún usuario encontrado para ese correo electrónico");
       }
     }
@@ -37,7 +38,7 @@ class _Login2ScreenState extends State<Login2Screen> {
     TextEditingController _passwordController = TextEditingController();
     return Scaffold(
         body: Container(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(13.0),
       child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +52,7 @@ class _Login2ScreenState extends State<Login2Screen> {
               ),
             ),
             const Text(
-              "Inicie Sesión",
+              "Registro",
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 44.0,
@@ -59,13 +60,13 @@ class _Login2ScreenState extends State<Login2Screen> {
               ),
             ),
             const SizedBox(
-              height: 44.0,
+              height: 50.0,
             ),
             TextFormField(
               controller: _emailController,
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
-                hintText: "User Email",
+                hintText: "Email",
                 prefixIcon: Icon(Icons.mail, color: Colors.black),
               ),
             ),
@@ -76,16 +77,12 @@ class _Login2ScreenState extends State<Login2Screen> {
               controller: _passwordController,
               obscureText: true,
               decoration: const InputDecoration(
-                hintText: "User Password",
+                hintText: "Password",
                 prefixIcon: Icon(Icons.lock, color: Colors.black),
               ),
             ),
             const SizedBox(
               height: 12.0,
-            ),
-            const Text(
-              "No recuerdas tu contraseña?",
-              style: TextStyle(color: Colors.blue),
             ),
             const SizedBox(
               height: 88.0,
@@ -101,12 +98,23 @@ class _Login2ScreenState extends State<Login2Screen> {
                 onPressed: () async {
                   User? user = await loginUsingEmailPassword(
                       email: _emailController.text, password: _passwordController.text context: context);
+                  // ignore: avoid_print
                   print(user);
+                  FirebaseAuth.instance.createUserWithEmailAndPassword(
+                    email: _emailController.text, password: _passwordController.text)
+                    .then((value) {
+                    // ignore: avoid_print
+                    print("Nuevo usuario creado");
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignInScreen()));
+                    }).onError(((error, stackTrace) {
+                    // ignore: avoid_print
+                    print("Error ${error.toString()}");
+                  }));
                   if(user != null){
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> HmusicScreen()));
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> HomeScreen()));
                   }
                 },
-                child: const Text("Ingresar",
+                child: const Text("Registrarse",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18.0,

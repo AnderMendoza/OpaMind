@@ -80,7 +80,7 @@ class MenuLateral extends StatelessWidget {
           ListTile(
             title: const Text('Cerrar Sesión'),
             onTap: () {
-              Navigator.pushNamed(context, 'ruta_login');
+              Navigator.pushNamed(context, 'ruta_signin');
             },
           ),
         ],

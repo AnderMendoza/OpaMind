@@ -1,6 +1,6 @@
 //Importamos los paquetes
 import 'package:OpaMind/providers/home_music_provider.dart';
-import 'package:OpaMind/screens/login2_screen.dart';
+import 'package:OpaMind/screens/sign_in_screen.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -9,14 +9,14 @@ import '../components/custom_list_tile.dart';
 import '../models/home_music.dart';
 import 'package:OpaMind/widgets/menu_lateral.dart';
 
-class HmusicScreen extends StatefulWidget {
-  const HmusicScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  createState() => _HmusicScreen();
+  createState() => _HomeScreen();
 }
 
-class _HmusicScreen extends State<HmusicScreen> {
+class _HomeScreen extends State<HomeScreen> {
   //Inicializamos Firebase App
   Future<FirebaseApp> _initializeFirebase() async {
     FirebaseApp firebaseApp = await Firebase.initializeApp();

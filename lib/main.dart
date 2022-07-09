@@ -1,12 +1,13 @@
-import 'package:OpaMind/screens/home_music_screen.dart';
+import 'package:OpaMind/screens/home_screen.dart';
 import 'package:OpaMind/providers/home_music_provider.dart';
 import 'package:OpaMind/screens/reporte_home_music.dart';
 import 'package:OpaMind/screens/reporte_screen.dart';
 import 'package:OpaMind/screens/reporterock_screen.dart';
+import 'package:OpaMind/screens/sign_up_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:OpaMind/screens/login2_screen.dart';
-import 'package:OpaMind/screens/principal_screen.dart';
+import 'package:OpaMind/screens/sign_in_screen.dart';
+import 'package:OpaMind/screens/perfil_screen.dart';
 import 'package:OpaMind/screens/reproductor.dart';
 import 'package:provider/provider.dart';
 import 'package:OpaMind/screens/rock_screen.dart';
@@ -17,8 +18,9 @@ import 'package:OpaMind/screens/jazz_screen.dart';
 import 'package:OpaMind/providers/jazz_provider.dart';
 import 'package:OpaMind/screens/techno_screen.dart';
 import 'package:OpaMind/providers/techno_provider.dart';
+import 'package:OpaMind/providers/google_sign_in.dart';
 
-Future<void> main() async {
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
@@ -36,20 +38,22 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => HmusicProvider()),
         ChangeNotifierProvider(create: (_) => JazzProvider()),
         ChangeNotifierProvider(create: (_) => TechnoProvider()),
+        ChangeNotifierProvider(create: (_) => GoogleSignInProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'POS APP',
-        initialRoute: 'ruta_login', // POR DEFECTO LLAMA A LA RUTA LOGIN
+        initialRoute: 'ruta_sign_in', // POR DEFECTO LLAMA A LA RUTA LOGIN
         routes: {
-          'ruta_login': (_) => Login2Screen(),
-          'ruta_principal': (_) => HmusicScreen(),
+          'ruta_sign_in': (_) => const SignInScreen(),
+          'ruta_sign_up': (_) => const SignUpScreen(),
+          'ruta_principal': (_) => const HomeScreen(),
           'ruta_rocks': (_) => RockScreen(),
           'ruta_pops': (_) => PopScreen(),
           'reproductor': (_) => ReproductorPops(),
           'ruta_jazzs': (_) => JazzScreen(),
           'ruta_technos': (_) => TechnoScreen(),
-          'ruta_perfil': (_) => PrincipalScreen(),
+          'ruta_perfil': (_) => PerfilScreen(),
           "ruta_reporte": (_) => ReporteScreen(),
           "ruta_reporterock": (_) => ReporteRockScreen(),
           "ruta_reporte_home_music": (_) => ReporteHmusicScreen(),
@@ -79,7 +83,7 @@ class _HomePageState extends State<HomePage> {
             future: Firebase.initializeApp(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
-                return Login2Screen();
+                return const SignInScreen();
               }
               return const Center(
                 child: CircularProgressIndicator(),
