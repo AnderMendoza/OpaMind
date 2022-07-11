@@ -23,8 +23,15 @@ class RockSearchDelegate extends SearchDelegate<Rock> {
     return IconButton(
         icon: Icon(Icons.arrow_back),
         onPressed: () {
-          close(context,
-              Rock(id: '', rockId: 0, portada: '', cancion: '', banda: ''));
+          close(
+              context,
+              Rock(
+                  id: '',
+                  rockId: 0,
+                  portada: '',
+                  cancion: '',
+                  banda: '',
+                  url: ''));
         });
   }
 

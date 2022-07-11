@@ -23,8 +23,15 @@ class JazzSearchDelegate extends SearchDelegate<Jazz> {
     return IconButton(
         icon: Icon(Icons.arrow_back),
         onPressed: () {
-          close(context,
-              Jazz(id: '', jazzId: 0, portada: '', cancion: '', banda: ''));
+          close(
+              context,
+              Jazz(
+                  id: '',
+                  jazzId: 0,
+                  portada: '',
+                  cancion: '',
+                  banda: '',
+                  url: ''));
         });
   }
 

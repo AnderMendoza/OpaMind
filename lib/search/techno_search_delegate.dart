@@ -26,7 +26,12 @@ class TechnoSearchDelegate extends SearchDelegate<Techno> {
           close(
               context,
               Techno(
-                  id: '', technosId: 0, portada: '', cancion: '', banda: ''));
+                  id: '',
+                  technosId: 0,
+                  portada: '',
+                  cancion: '',
+                  banda: '',
+                  url: ''));
         });
   }
 
