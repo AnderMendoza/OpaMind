@@ -1,27 +1,86 @@
-import 'package:flutter/material.dart';
-import 'package:OpaMind/providers/techno_provider.dart';
-import 'package:OpaMind/widgets/menu_lateral.dart';
+//Importamos los paquetes
 import 'package:OpaMind/models/techno.dart';
-import 'package:provider/provider.dart';
+import 'package:OpaMind/providers/techno_provider.dart';
 import 'package:OpaMind/search/techno_search_delegate.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../components/custom_list_tile.dart';
+import 'package:OpaMind/widgets/menu_lateral.dart';
+
+import '../providers/techno_provider.dart';
 
 class TechnoScreen extends StatefulWidget {
+  const TechnoScreen({Key? key}) : super(key: key);
+
   @override
   createState() => _TechnoScreen();
 }
 
 class _TechnoScreen extends State<TechnoScreen> {
+  //Asignamos valores la variables para titulo de la cancion, cover y cantante
+  String currentTitle = "";
+  String currentCover = "";
+  String currentSinger = "";
+  IconData btnIcon = Icons.play_arrow;
+
+  //Creamos el player
+  AudioPlayer audioPlayer = AudioPlayer(mode: PlayerMode.MEDIA_PLAYER);
+  bool isPlaying = false;
+  String currentSong = "";
+
+  //Creamos la barra de reproduccion
+  Duration duration = const Duration();
+  Duration position = const Duration();
+
+  //Creamos los botones de reproduccion y pausa
+  void playMusic(String url) async {
+    if (isPlaying && currentSong != url) {
+      audioPlayer.pause();
+      int result = await audioPlayer.play(url);
+      if (result == 1) {
+        setState(() {
+          currentSong = url;
+        });
+      }
+    } else if (!isPlaying) {
+      int result = await audioPlayer.play(url);
+      if (result == 1) {
+        setState(() {
+          isPlaying = true;
+          btnIcon = Icons.play_arrow;
+        });
+      }
+    }
+    audioPlayer.onDurationChanged.listen((Duration p) {
+      setState(() {
+        duration = p;
+        print('duration:$duration');
+      });
+    });
+    audioPlayer.onAudioPositionChanged.listen((Duration p) {
+      setState(() {
+        position = p;
+        print('position:$position');
+      });
+    });
+  }
+
+  //Creamos el area de trabajo
   @override
   Widget build(BuildContext context) {
     final technoProvider = Provider.of<TechnoProvider>(context);
     final List<Techno> listaTechnos = technoProvider.listaTechnos;
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 69, 76, 149),
+      backgroundColor: const Color.fromARGB(255, 69, 76, 149),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 50, 54, 99),
-        title: Text('Techno'),
-        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 50, 54, 99),
+        title: const Text(
+          "Techno",
+          style: TextStyle(color: Colors.white),
+        ),
+        elevation: 0,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
@@ -34,80 +93,119 @@ class _TechnoScreen extends State<TechnoScreen> {
         ],
       ),
       drawer: const MenuLateral(),
-      body: Center(
-        child: ListView.builder(
-          itemCount: listaTechnos.length,
-          itemBuilder: (context, index) {
-            return Container(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Container(
-                    margin: EdgeInsets.only(top: 10, bottom: 10),
-                    width: double.infinity,
-                    height: 75,
-                    decoration: _cardBorders(),
-                    child: Stack(
-                      alignment: Alignment.bottomLeft,
-                      children: [
-                        Container(
-                          child: ListTile(
-                            onTap: (() {
-                              Navigator.pushReplacementNamed(
-                                  context, 'reproductor_techno');
-                            }),
-                            title: Text(listaTechnos[index].cancion,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 21,
-                                    color: Color.fromARGB(255, 255, 255, 255))),
-                            subtitle: Text(
-                              listaTechnos[index].banda,
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 151, 151, 151),
-                                fontSize: 15,
+      //Mostramos las canciones
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+                itemCount: listaTechnos.length,
+                itemBuilder: (context, index) => customListTile(
+                      onTap: () {
+                        playMusic(listaTechnos[index].url);
+                        setState(() {
+                          currentTitle = listaTechnos[index].cancion;
+                          currentCover = listaTechnos[index].portada;
+                          currentSinger = listaTechnos[index].banda;
+                        });
+                      },
+                      title: listaTechnos[index].cancion,
+                      cover: listaTechnos[index].portada,
+                      singer: listaTechnos[index].banda,
+                    )),
+          ),
+          //Creamos el espacio del player
+          Container(
+            decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 56, 39, 98),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0x55212121),
+                    blurRadius: 8.0,
+                  ),
+                ]),
+            child: Column(
+              children: [
+                Slider(
+                  value: position.inSeconds.toDouble(),
+                  min: 0,
+                  max: duration.inSeconds.toDouble(),
+                  onChanged: (value) async {
+                    final position = Duration(seconds: value.toInt());
+                    await audioPlayer.seek(position);
+
+                    await audioPlayer.resume();
+                  },
+                ),
+                //Agregamos los covers de cada cancion
+                Padding(
+                  padding: const EdgeInsets.only(
+                      bottom: 8.0, left: 12.0, right: 12.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        height: 60.0,
+                        width: 60.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(6.0),
+                            image: DecorationImage(
+                                image: NetworkImage(currentCover))),
+                      ),
+                      //Agregamos el nombre del cantante y nombre de la cnacion
+                      const SizedBox(width: 10.0),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              currentTitle,
+                              style: const TextStyle(
+                                color: Color.fromARGB(255, 251, 251, 251),
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
-                            leading: Image.network(listaTechnos[index].portada,
-                                height: 100, width: 80),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Color.fromARGB(255, 151, 151, 151),
-                              size: 30,
+                            const SizedBox(
+                              height: 5.0,
                             ),
-                          ),
-                        )
-                      ],
-                    )),
-              ),
-            );
-          },
-        ),
+                            Text(
+                              currentSinger,
+                              style: const TextStyle(
+                                  color: Color.fromARGB(255, 251, 251, 251),
+                                  fontSize: 14.0),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //Funcion para reproducir y pausar las canciones
+                      IconButton(
+                        color: const Color.fromARGB(255, 255, 255, 255),
+                        onPressed: () {
+                          if (isPlaying) {
+                            audioPlayer.resume();
+                            setState(() {
+                              btnIcon = Icons.pause;
+                              isPlaying = false;
+                            });
+                          } else {
+                            audioPlayer.pause();
+                            setState(() {
+                              btnIcon = Icons.play_arrow;
+                              isPlaying = true;
+                            });
+                          }
+                        },
+                        iconSize: 42.0,
+                        icon: Icon(btnIcon),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
 }
-
-class _ImagenFondo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
-      child: Container(
-        width: 80,
-        height: 100,
-        child: FadeInImage(
-          placeholder: AssetImage('assets/jar gif.gif'),
-          image: NetworkImage(''),
-          fit: BoxFit.cover,
-        ),
-      ),
-    );
-  }
-}
-
-BoxDecoration _cardBorders() => BoxDecoration(
-        color: Color.fromARGB(255, 50, 54, 99),
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(color: Colors.black12, offset: Offset(0, 7), blurRadius: 10)
-        ]);

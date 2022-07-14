@@ -1,6 +1,7 @@
 //Importamos los paquetes
 import 'package:OpaMind/providers/home_music_provider.dart';
 import 'package:OpaMind/screens/sign_in_screen.dart';
+import 'package:OpaMind/search/hmusic_search_delegate.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -89,7 +90,11 @@ class _HomeScreen extends State<HomeScreen> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
-            onPressed: () {},
+            onPressed: () {
+              showSearch(
+                  context: context,
+                  delegate: HmusicSearchDelegate(listaHmusics));
+            },
           )
         ],
       ),
