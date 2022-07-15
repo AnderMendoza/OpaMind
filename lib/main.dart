@@ -3,6 +3,7 @@ import 'package:OpaMind/providers/home_music_provider.dart';
 import 'package:OpaMind/screens/reporte_home_music.dart';
 import 'package:OpaMind/screens/reporte_screen.dart';
 import 'package:OpaMind/screens/reporterock_screen.dart';
+import 'package:OpaMind/screens/reproductor_hmusic_screen.dart';
 import 'package:OpaMind/screens/sign_up_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -57,6 +58,7 @@ class MyApp extends StatelessWidget {
           'reproductor_rock': (_) => ReproductorRocks(),
           'reproductor_jazz': (_) => ReproductorJazzs(),
           'reproductor_techno': (_) => ReproductorTechnos(),
+          'reproductor_hmusic': (_) => ReproductorHmusics(),
           'ruta_jazzs': (_) => JazzScreen(),
           'ruta_technos': (_) => TechnoScreen(),
           'ruta_perfil': (_) => PerfilScreen(),
