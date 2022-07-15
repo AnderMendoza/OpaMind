@@ -3,7 +3,7 @@ import 'dart:convert';
 class Techno {
   Techno({
     required this.id,
-    required this.technosId,
+    required this.technoId,
     required this.portada,
     required this.cancion,
     required this.banda,
@@ -11,7 +11,7 @@ class Techno {
   });
 
   String id;
-  int technosId;
+  int technoId;
   String portada;
   String cancion;
   String banda;
@@ -23,7 +23,7 @@ class Techno {
 
   factory Techno.fromMap(Map<String, dynamic> json) => Techno(
       id: json["_id"],
-      technosId: json["technosId"],
+      technoId: json["technoId"],
       portada: json["portada"],
       cancion: json["cancion"],
       banda: json["banda"],
@@ -31,7 +31,7 @@ class Techno {
 
   Map<String, dynamic> toMap() => {
         "_id": id,
-        "technosId": technosId,
+        "technoId": technoId,
         "portada": portada,
         "cancion": cancion,
         "banda": banda,

@@ -29,12 +29,6 @@ class MenuLateral extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Playlist'),
-            onTap: () {
-              Navigator.pushNamed(context, 'ruta_playlist');
-            },
-          ),
-          ListTile(
             title: const Text('Rock'),
             onTap: () {
               Navigator.pushNamed(context, 'ruta_rocks');
@@ -50,12 +44,6 @@ class MenuLateral extends StatelessWidget {
             title: const Text('Jazz'),
             onTap: () {
               Navigator.pushNamed(context, 'ruta_jazzs');
-            },
-          ),
-          ListTile(
-            title: const Text('Techno'),
-            onTap: () {
-              Navigator.pushNamed(context, 'ruta_technos');
             },
           ),
           ListTile(
@@ -80,7 +68,7 @@ class MenuLateral extends StatelessWidget {
           ListTile(
             title: const Text('Cerrar Sesión'),
             onTap: () {
-              Navigator.pushNamed(context, 'ruta_signin');
+              Navigator.pushNamed(context, 'ruta_sign_in');
             },
           ),
         ],
