@@ -51,7 +51,7 @@
     </li>
     <li><a href="#usage">Uso</a></li>
     <li><a href="#roadmap">Arquitectura</a></li>
-    <li><a href="#contributing">Contribuye</a></li>
+    <li><a href="#contributing">Contribución</a></li>
     <li><a href="#license">Licencia</a></li>
     <li><a href="#contact">Contacto</a></li>
     <li><a href="#acknowledgments">Reconocimientos</a></li>
