@@ -39,22 +39,22 @@
     <li>
       <a href="#sobre-el-proyecto">Sobre el proyecto</a>
       <ul>
-        <li><a href="#built-with">Construido con</a></li>
+        <li><a href="#construido-con">Construido con</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Ejecución</a>
+      <a href="#ejecución">Ejecución</a>
       <ul>
-        <li><a href="#prerequisites">Prerrequisitos</a></li>
-        <li><a href="#installation">Instalación</a></li>
+        <li><a href="#prerrequisitoss">Prerrequisitos</a></li>
+        <li><a href="#instalación">Instalación</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Uso</a></li>
-    <li><a href="#roadmap">Arquitectura</a></li>
-    <li><a href="#contributing">Contribución</a></li>
-    <li><a href="#license">Licencia</a></li>
-    <li><a href="#contact">Contacto</a></li>
-    <li><a href="#acknowledgments">Reconocimientos</a></li>
+    <li><a href="#uso">Uso</a></li>
+    <li><a href="#arquitectura">Arquitectura</a></li>
+    <li><a href="#contribución">Contribución</a></li>
+    <li><a href="#licencia">Licencia</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#reconocimientos">Reconocimientos</a></li>
   </ol>
 </details>
 
