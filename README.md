@@ -26,7 +26,7 @@
     ·
     <a href="https://github.com/AnderMendoza/OpaMind-frontend/issues">Reporta un Bug</a>
     ·
-    <a href="https://github.com/AnderMendoza/OpaMind-frontend/issuess">Solicitar función</a>
+    <a href="https://github.com/AnderMendoza/OpaMind-frontend/issues">Solicitar función</a>
   </p>
 </div>
 
