@@ -10,7 +10,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/AnderMendoza/OpaMind-frontend">
     <img src="./assets/icon/icon.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -19,14 +19,14 @@
   <p align="center">
     Proyecto academico de desarrollo móvil con Flutter
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explora los documentos »</strong></a>
+    <a href="https://github.com/AnderMendoza/OpaMind-frontend"><strong>Explora los documentos »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">Ver demostración</a>
+    <a href="https://github.com/AnderMendoza/OpaMind-frontend">Ver demostración</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Reporta un Bug</a>
+    <a href="https://github.com/AnderMendoza/OpaMind-frontend/issues">Reporta un Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Solicitar función</a>
+    <a href="https://github.com/AnderMendoza/OpaMind-frontend/issuess">Solicitar función</a>
   </p>
 </div>
 
