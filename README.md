@@ -45,7 +45,7 @@
     <li>
       <a href="#ejecución">Ejecución</a>
       <ul>
-        <li><a href="#prerrequisitoss">Prerrequisitos</a></li>
+        <li><a href="#prerrequisitos">Prerrequisitos</a></li>
         <li><a href="#instalación">Instalación</a></li>
       </ul>
     </li>
