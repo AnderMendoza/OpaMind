@@ -78,6 +78,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [![Flutter][Flutter]][Flutter-url]
 * [![Dart][Dart]][Dart-url]
 * [![AndroidStudio][AndroidStudio]][AndroidStudio-url]
+* [![Firebase][Firebase]][Firebase-url]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -218,3 +219,5 @@ Use this space to list resources you find helpful and would like to give credit 
 [Dart-url]: https://dart.dev/
 [AndroidStudio]: https://img.shields.io/badge/android%20studio-346ac1?style=for-the-badge&logo=android%20studio&logoColor=67a856
 [AndroidStudio-url]: https://developer.android.com/studio?hl=es-419
+[Firebase]: https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34
+[Firebase-url]: https://firebase.google.com/?hl=es
