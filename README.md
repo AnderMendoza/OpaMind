@@ -213,5 +213,5 @@ Use this space to list resources you find helpful and would like to give credit 
 [product-screenshot]: assets/mockup/login.png
 [Flutter]: https://img.shields.io/badge/Flutter-000001?style=for-the-badge&logo=flutter&logoColor=blue
 [Flutter-url]: https://flutter.dev/
-[Flutter]: https://img.shields.io/badge/dart-144664?style=for-the-badge&logo=dart&logoColor=blue
-[Flutter-url]: https://dart.dev/
+[Dart]: https://img.shields.io/badge/dart-144664?style=for-the-badge&logo=dart&logoColor=blue
+[Dart-url]: https://dart.dev/
