@@ -73,7 +73,7 @@ Este es un proyecto academico centrado en el desarrollo móvil, la idea de la ap
 
 ### Construido con
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Para la elaboración de este proyecto hemos utilizado distintas herramientas las cuales se han observado en el curso de la carrera, donde tuvimos que utilizar estas mismas a nuestra manera tanto en el diseño como en las funcionalidades, de las cuales se usó el SDK de Flutter para desarrollar interfaces de usuario para nuestra aplicación en Android, iOS y Web. Como lenguaje de programación se empleo Dart, estos dos últimos creados por Google. Y para nuestro emulador utilizamos Android Studio para poder visualizar los cambios en tiempo real. Destacar tambien que agregamos el servicio de Firebase como extra para la autentificación de nuestros usuarios al momento de logearse.
 
 * [![Flutter][Flutter]][Flutter-url]
 * [![Dart][Dart]][Dart-url]
