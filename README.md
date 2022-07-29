@@ -76,6 +76,7 @@ Este es un proyecto academico centrado en el desarrollo móvil, la idea de la ap
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [![Flutter][Flutter]][Flutter-url]
+* [![Dart][Dart]][Dart-url]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -212,17 +213,5 @@ Use this space to list resources you find helpful and would like to give credit 
 [product-screenshot]: assets/mockup/login.png
 [Flutter]: https://img.shields.io/badge/Flutter-000001?style=for-the-badge&logo=flutter&logoColor=blue
 [Flutter-url]: https://flutter.dev/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+[Flutter]: https://img.shields.io/badge/dart-144664?style=for-the-badge&logo=dart&logoColor=blue
+[Flutter-url]: https://dart.dev/
