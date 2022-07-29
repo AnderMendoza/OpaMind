@@ -77,6 +77,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 * [![Flutter][Flutter]][Flutter-url]
 * [![Dart][Dart]][Dart-url]
+* [![AndroidStudio][AndroidStudio]][AndroidStudio-url]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -215,3 +216,5 @@ Use this space to list resources you find helpful and would like to give credit 
 [Flutter-url]: https://flutter.dev/
 [Dart]: https://img.shields.io/badge/dart-144664?style=for-the-badge&logo=dart&logoColor=blue
 [Dart-url]: https://dart.dev/
+[AndroidStudio]: https://img.shields.io/badge/android%20studio-346ac1?style=for-the-badge&logo=android%20studio&logoColor=67a856
+[AndroidStudio-url]: https://developer.android.com/studio?hl=es-419
