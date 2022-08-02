@@ -148,10 +148,10 @@ Las contribuciones son las que hacen de la comunidad de código abierto un lugar
 Si tiene una sugerencia que mejoraría esto, bifurque el repositorio y cree una solicitud de extracción. También puede simplemente abrir un problema con la etiqueta "mejora". ¡No olvides darle una estrella al proyecto! ¡Gracias de nuevo!
 
 1. Has un Fork al proyecto
-2. Crea tu rama de características (`git checkout -b feature/AmazingFeature`)
-3. Has un commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Crea tu rama de características (`git checkout -b caracteristica/mejoraOpaMind`)
+3. Has un commit de tus cambios (`git commit -m 'Agregando mis características su proyecto'`)
+4. Has un push a la misma rama (`git push origin caracteristica/mejoraOpaMind`)
+5. Abre una solicitud Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -160,9 +160,13 @@ Si tiene una sugerencia que mejoraría esto, bifurque el repositorio y cree una 
 <!-- CONTACT -->
 ## Contacto
 
-Anderson Mendoza - [@your_twitter](https://twitter.com/your_username) - davidmramos53@gmail.com
+Anderson Mendoza - [@Anderson](https://www.linkedin.com/in/anderson-mendoza-ramos-7551141b7/) - davidmramos53@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Santiago Peña - <!-- falta insertar contacto -->
+
+Melany - <!-- falta insertar contacto -->
+
+Gabriel - <!-- falta insertar contacto -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
