@@ -117,15 +117,16 @@ Le recordamos que esta parte es opcional si en caso desee o no utilizar un emula
 <!-- ROADMAP -->
 ## Arquitectura
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+![Architech Name Screen Shot][architech-screenshot]
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+- [x] Acceso y registro funcional
+- [x] Reproducción de audio/música
+- [ ] Acceso con Google
+- [ ] Cerrar sesión
+- [ ] Ventana del reproductor funcional
+- [ ] Perfil adaptado a cada usuario
+
+Consulte los [problemas abiertos](https://github.com/AnderMendoza/OpaMind-frontend/issues) para seguir el desarrollo de cada una de las actividades inconclusas.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -175,16 +176,12 @@ Gabriel - <!-- falta insertar contacto -->
 <!-- ACKNOWLEDGMENTS -->
 ## Reconocimientos
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+Nos gustaria agregar una lista de recursos que nos resultaron útiles para el desarrollo de este proyecto a los cuales damos crédito.
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [Mixkit](https://mixkit.co/free-stock-music/)
+* [Canva](https://www.canva.com/)
+* [Balsamiq](https://balsamiq.cloud/)
+* [Firabase](https://firebase.google.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -197,6 +194,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/anderson-mendoza-ramos-7551141b7/
 [product-screenshot]: assets/mockup/login.png
+[architech-screenshot]: assets/architech/Arquitectura-de-OpaMind.png
 [Flutter]: https://img.shields.io/badge/Flutter-16478c?style=for-the-badge&logo=flutter&logoColor=blue
 [Flutter-url]: https://flutter.dev/
 [Dart]: https://img.shields.io/badge/dart-144664?style=for-the-badge&logo=dart&logoColor=blue
