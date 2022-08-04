@@ -194,7 +194,7 @@ Nos gustaria agregar una lista de recursos que nos resultaron útiles para el de
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/anderson-mendoza-ramos-7551141b7/
 [product-screenshot]: assets/mockup/login.png
-[architech-screenshot]: assets/architech/Arquitectura-de-OpaMind.png
+[architech-screenshot]: assets/architech/Arquitectura%20de%20OpaMind.png
 [Flutter]: https://img.shields.io/badge/Flutter-16478c?style=for-the-badge&logo=flutter&logoColor=blue
 [Flutter-url]: https://flutter.dev/
 [Dart]: https://img.shields.io/badge/dart-144664?style=for-the-badge&logo=dart&logoColor=blue
