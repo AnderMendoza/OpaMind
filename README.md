@@ -165,11 +165,11 @@ Si tiene una sugerencia que mejoraría esto, bifurque el repositorio y cree una 
 
 Anderson Mendoza - [@Anderson](https://www.linkedin.com/in/anderson-mendoza-ramos-7551141b7/) - davidmramos53@gmail.com
 
-Santiago Peña - <!-- falta insertar contacto -->
+Santiago Peña - [@Santiago](https://github.com/Isntlambo)
 
-Melany - <!-- falta insertar contacto -->
+Melany - [@Melany](https://github.com/mel2910)
 
-Gabriel - <!-- falta insertar contacto -->
+Gabriel - [@Gabriel](https://github.com/KennaiDeKennia)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
