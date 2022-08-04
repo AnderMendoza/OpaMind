@@ -119,10 +119,12 @@ Le recordamos que esta parte es opcional si en caso desee o no utilizar un emula
 
 ![Architech Name Screen Shot][architech-screenshot]
 
-- [x] Acceso y registro funcional
+- [ ] Login funcional
+    - [X] Autentificación de usuarios
+    - [X] Rgistro de usuarios
+    - [ ] Acceso con Google
+    - [ ] Cerrar sesión
 - [x] Reproducción de audio/música
-- [ ] Acceso con Google
-- [ ] Cerrar sesión
 - [ ] Ventana del reproductor funcional
 - [ ] Perfil adaptado a cada usuario
 
