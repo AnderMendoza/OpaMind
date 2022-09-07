@@ -16,16 +16,16 @@
   <h3 align="center">OpaMind</h3>
 
   <p align="center">
-    Proyecto academico de desarrollo móvil con Flutter
+    Mobile development academic project with Flutter
     <br />
-    <a href="https://github.com/AnderMendoza/OpaMind-frontend"><strong>Explora los documentos »</strong></a>
+    <a href="https://github.com/AnderMendoza/OpaMind-frontend"><strong>Explore the documents »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/AnderMendoza/OpaMind-frontend">Ver demostración</a>
+    <a href="https://github.com/AnderMendoza/OpaMind-frontend">See demo</a>
     ·
-    <a href="https://github.com/AnderMendoza/OpaMind-frontend/issues">Reporta un Bug</a>
+    <a href="https://github.com/AnderMendoza/OpaMind-frontend/issues">Report a Bug</a>
     ·
-    <a href="https://github.com/AnderMendoza/OpaMind-frontend/issues">Solicitar función</a>
+    <a href="https://github.com/AnderMendoza/OpaMind-frontend/issues">Request feature</a>
   </p>
 </div>
 
@@ -33,119 +33,119 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Tabla de Contenido</summary>
+  <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#sobre-el-proyecto">Sobre el proyecto</a>
+      <a href="#about-the-project">About the project</a>
     </li>
     <li>
-      <a href="#ejecución">Ejecución</a>
+      <a href="#execution">Execution</a>
       <ul>
-        <li><a href="#prerrequisitos">Prerrequisitos</a></li>
-        <li><a href="#instalación-del-sdk-de-flutter">Instalación del Sdk de Flutter</a></li>
-        <li><a href="#instalación-del-emulador-de-android-studio">Instalación del emulador de Android Studio</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installing-the-flutter-sdk">Installing the Flutter SDK</a></li>
+        <li><a href="#installing-the-android-studio-emulator">Installing the Android Studio emulator</a></li>
       </ul>
     </li>
-    <li><a href="#uso">Uso</a></li>
-    <li><a href="#arquitectura">Arquitectura</a></li>
-    <li><a href="#contribución">Contribución</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-    <li><a href="#reconocimientos">Reconocimientos</a></li>
+    <li><a href="#use">Use</a></li>
+    <li><a href="#architecture">Architecture</a></li>
+    <li><a href="#contribution">Contribution</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
 
 
 <!-- ABOUT THE PROJECT -->
-## Sobre el proyecto
+## About the project
 
 ![Product Name Screen Shot][product-screenshot]
 
-Este es un proyecto academico centrado en el desarrollo móvil, la idea de la aplicación consiste en desarrollar una app de música donde el usuario pueda interactuar y escuchar algunas canciones populares del momento.
+This is an academic project focused on mobile development, the idea of the application is to develop a music app where the user can interact and listen to some popular songs of the moment.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- GETTING STARTED -->
-## Ejecución
+## Execution
 
-Para la ejecución de la app es indispensable tener el SDK de Flutter, ya que sin este no podrá ejecutar la aplicación, una vez lo tenga basta con ejecutar el archivo main.dart de este repositorio con su dispositivo Android conectado a su pc. Si en todo caso también quisiera probarlo en un emulador tendría que descargar el emulador de su conveniencia, pero aquí le compartimos los pasos si en caso desee utilizar el mismo emulador que se usó en este proyecto.
+To run the app it is essential to have the Flutter SDK, since without it you will not be able to run the application. Once you have it, simply run the main.dart file from this repository with your Android device connected to your PC. If in any case you also wanted to try it in an emulator, you would have to download the emulator of your convenience, but here we share the steps if you want to use the same emulator that was used in this project.
 
-### Prerrequisitos
+### Prerequisites
 
-Para descargar el SDK de Flutter debes dirigirte a su página web y entrar en la sección de [Get started](https://docs.flutter.dev/get-started/install) donde deberá elegir su sistema operativo y descargar el paquete de instalación de la última version estable del Sdk de Flutter.<br/>
+To download the Flutter SDK you must go to its website and enter the [Get started](https://docs.flutter.dev/get-started/install) section where you must choose your operating system and download the package. installation of the latest stable version of the Flutter Sdk.<br/>
 
-Si en caso desea instalar el emulador de Android Studio siga <a href="#instalación-del-emulador-de-android-studio">estos pasos</a>.
+If in case you want to install Android Studio emulator follow <a href="#instalación-del-emulador-de-android-studio">this steps</a>.
 
-### Instalación del SDK de Flutter
+### Installing the Flutter SDK
 
-Para la instalación debe seguir los pasos mostrados en la misma sección anteriormente mencionada de la página web de Flutter, los cuales son:
+For the installation you must follow the steps shown in the same section of the Flutter website mentioned above, which are:
 
-1. Siga al pie de la letra el apartado **Get the Flutter SDK**
-2. Revise la parte de **Update tour path**
-3. Por ultimo complete los pasos de **Run flutter doctor**
+1. Follow the **Get the Flutter SDK** section to the letter
+2. Check the **Update tour path** part
+3. Finally complete the steps of **Run flutter doctor**
 
-### Instalación del emulador de Android Studio
+### Installing the Android Studio emulator
 
-Le recordamos que esta parte es opcional si en caso desee o no utilizar un emulador para ejecutar el proyecto.
+We remind you that this part is optional whether or not you want to use an emulator to run the project.
 
-1. Dirigase a la pagina web de android studio en la sección de [Download](https://developer.android.com/studio)
-2. Acepte los términos y condiciones y descargue el archivo de instalación
-3. Ejecute y siga los pasos del instalador de Android Studio de acuerdo a su preferencia en cuanto a opciones de elecciones en la instalación, para mayor información lo invitamos a ver la [Guía del usuario](https://developer.android.com/studio/intro) proporcionada por Android Studio
+1. Go to the android studio website in the section [Download](https://developer.android.com/studio)
+2. Accept the terms and conditions and download the installation file
+3. Run and follow the steps of the Android Studio installer according to your preference in terms of choice options in the installation, for more information we invite you to see the [User Guide](https://developer.android.com/studio/intro) provided by Android Studio
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- ROADMAP -->
-## Arquitectura
+## Architecture
 
 ![Architech Name Screen Shot][architech-screenshot]
 
-- [ ] Login funcional
-    - [X] Autentificación de usuarios
-    - [X] Rgistro de usuarios
-    - [ ] Acceso con Google
-    - [ ] Cerrar sesión
-- [x] Reproducción de audio/música
-- [ ] Ventana del reproductor funcional
-- [ ] Perfil adaptado a cada usuario
+- [ ] Functional login
+    - [X] User Authentication
+    - [X] User Registration
+    - [ ] Sign in with Google
+    - [ ] Sign off
+- [x] Play audio/music
+- [ ] Functional player window
+- [ ] Profile adapted to each user
 
-Consulte los [problemas abiertos](https://github.com/AnderMendoza/OpaMind-frontend/issues) para seguir el desarrollo de cada una de las actividades inconclusas.
+Check the [open issues](https://github.com/AnderMendoza/OpaMind-frontend/issues) to follow the development of each of the unfinished activities.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- USAGE EXAMPLES -->
-## Uso
+## Use
 
-Le recordamos que tome en cuenta la participación en la elaboración de cada uno de los integrantes de este trabajo para colocar los respectivos **creditos** si en caso lo llegase a utilizar y le agradecemos si nos regala una estrella a este repositorio que compartimos para toda la comunidad ya que el fin de este proyecto es netamente **académico**.
+We remind you to take into account the participation in the elaboration of each one of the members of this work to place the respective **credits** if in case you were to use it and we thank you if you give us a star to this repository that we share for the entire community since the purpose of this project is purely **academic**.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- CONTRIBUTING -->
-## Contribución
+## Contribution
 
-Las contribuciones son las que hacen de la comunidad de código abierto un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas **es muy apreciada**.
+Contributions are what make the open source community an amazing place to learn, inspire, and create. Any contribution you make is **greatly appreciated**.
 
-Si tiene una sugerencia que mejoraría esto, bifurque el repositorio y cree una solicitud de extracción. También puede simplemente abrir un problema con la etiqueta "mejora". ¡No olvides darle una estrella al proyecto! ¡Gracias de nuevo!
+If you have a suggestion that would improve this, please fork the repository and create a pull request. You can also simply open an issue with the "improvement" tag. Don't forget to give the project a star! Thanks again!
 
-1. Has un Fork al proyecto
-2. Crea tu rama de características (`git checkout -b caracteristica/mejoraOpaMind`)
-3. Has un commit de tus cambios (`git commit -m 'Agregando mis características su proyecto'`)
-4. Has un push a la misma rama (`git push origin caracteristica/mejoraOpaMind`)
-5. Abre una solicitud Pull Request
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/improvementOpaMind`)
+3. Commit your changes (`git commit -m 'Adding my features to your project'`)
+4. Push to the same branch (`git push origin feature/OpaMind enhancement`)
+5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- CONTACT -->
-## Contacto
+## Contact
 
 Anderson Mendoza - [@Anderson](https://www.linkedin.com/in/anderson-mendoza-ramos-7551141b7/) - davidmramos53@gmail.com
 
@@ -160,9 +160,9 @@ Gabriel - [@Gabriel](https://github.com/KennaiDeKennia)
 
 
 <!-- ACKNOWLEDGMENTS -->
-## Reconocimientos
+## Acknowledgments
 
-Nos gustaria agregar una lista de recursos que nos resultaron útiles para el desarrollo de este proyecto a los cuales damos crédito.
+We would like to add a list of resources that we found useful for the development of this project to which we give credit.
 
 * [Mixkit](https://mixkit.co/free-stock-music/)
 * [Canva](https://www.canva.com/)
@@ -175,7 +175,7 @@ Nos gustaria agregar una lista de recursos que nos resultaron útiles para el de
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/badge/CONTRIBUIDORES-4-green?style=for-the-badge
+[contributors-shield]: https://img.shields.io/badge/CONTRIBUTORS-4-green?style=for-the-badge
 [contributors-url]: https://github.com/AnderMendoza/OpaMind-frontend/graphs/contributors
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/anderson-mendoza-ramos-7551141b7/
