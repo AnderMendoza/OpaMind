@@ -1,6 +1,6 @@
-### Construido con
+### Built with
 
-Para la elaboración de este proyecto hemos utilizado distintas herramientas las cuales se han observado en el curso de la carrera, donde tuvimos que utilizar estas mismas a nuestra manera tanto en el diseño como en las funcionalidades, de las cuales se usó el SDK de Flutter para desarrollar interfaces de usuario para nuestra aplicación en Android, iOS y Web. Como lenguaje de programación se empleo Dart, estos dos últimos creados por Google. Y para nuestro emulador utilizamos Android Studio para poder visualizar los cambios en tiempo real. Destacar tambien que agregamos el servicio de Firebase como extra para la autentificación de nuestros usuarios al momento de logearse.
+For the elaboration of this project we have used different tools which have been observed in the course of the race, where we had to use these in our own way both in the design and in the functionalities, of which the Flutter SDK was used to develop user interfaces for our application on Android, iOS and Web. Dart was used as a programming language, the latter two created by Google. And for our emulator we use Android Studio to be able to visualize the changes in real time. Also note that we added the Firebase service as an extra for the authentication of our users when logging in.
 
 * [![Flutter][Flutter]][Flutter-url]
 * [![Dart][Dart]][Dart-url]
