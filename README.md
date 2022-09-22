@@ -104,6 +104,8 @@ We remind you that this part is optional whether or not you want to use an emula
 
 ![Architech Name Screen Shot][architech-screenshot]
 
+#### Things to do:
+
 - [ ] Functional login
     - [X] User Authentication
     - [X] User Registration
