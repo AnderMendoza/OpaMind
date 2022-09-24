@@ -28,6 +28,11 @@
     ·
     <a href="https://github.com/AnderMendoza/OpaMind-frontend/issues">Request feature</a>
   </p>
+  <p align="center">
+    <a href="/README.md">English</a>
+    ·
+    <a href="/READMEes.md">Español</a>
+  </p>
 </div>
 
 
